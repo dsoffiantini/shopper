@@ -1,45 +1,75 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html ng-app="shopper">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/reset.css" media="screen" charset="utf-8">
-    <link rel="stylesheet" href="./css/main.css" media="screen" charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <header class = "main-header">
-      <ul class="slideshow">
-        <nav class="main-nav">
-            <ul class="links">
-              <li><logo class="logo"></logo></li>
-            <li><a href="#">Link1</a></li>
-            <li><a href="#">Link2</a></li>
-            <li><a href="#">Link3</a></li>
-          </ul>
-        </nav>
-      	<li>
-      		<image class="slide1"></image>
-      		<content class>
-      			<h3="slide-text"></h3>
-      		</content>
-      	</li>
-        <li>
-      		<image class="slide2"></image>
-      		<content>
-      			<h3="slide-text"></h3>
-      		</content>
-      	</li>
-        <li>
-      		<image class="slide3"></image>
-      		<content>
-      			<h3="slide-text"></h3>
-      		</content>
-      	</li>
-      </ul>
-    </header>
-    <main class="main-content">
-      <div class="">Hello</div>
-    </main>
-  </body>
+    <link rel="stylesheet" href="./gulp/main.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="./css/product.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="./slick/slick.css" media="screen" charset="utf-8">
+    <title>Shopper- Online Shopping Store!</title>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <ul>
+            <li></li>
+        </ul>
+    </nav>
+    <ui-view>
+    </ui-view>
+    <footer class="footer">
+        <ul>
+            <li>Company</li>
+            <li>Link</li>
+            <li>Link</li>
+            <li>Link</li>
+            <li>Link</li>
+        </ul>
+        <ul>
+            <li>Information</li>
+            <li>Link</li>
+            <li>Link</li>
+            <li>Link</li>
+            <li>Link</li>
+        </ul>
+        <ul>
+            <li>Account</li>
+            <li>Link</li>
+            <li>Link</li>
+            <li>Link</li>
+            <li>Link</li>
+        </ul>
+        <ul>
+            <li>Contact</li>
+            <li>Link</li>
+            <li>Link</li>
+            <li>Link</li>
+            <li>Link</li>
+        </ul>
+    </footer>
+    <footer class="footer2">
+        <ul>
+            <li>Copyright&copy2016 eCommerce. All Rights Reserved.</li>
+        </ul>
+        <ul class="payment-methods">
+            <img src="images\brands\logo-paypal.svg" alt="Paypal" />
+            <img src="images\brands\logo-visa.svg" alt="" />
+            <img src="images\brands\logo-mastercard.svg" alt="" />
+            <img src="images\brands\logo-amex.svg" alt="" />
+            <img src="images\brands\logo-discover.svg" alt="" />
+            <img src="images\brands\logo-maestro.svg" alt="" />
+        </ul>
+    </footer>
+    <script src="./scripts/jquery-3.0.0.js" charset="utf-8"></script>
+    <script src="./slick/slick.js" charset="utf-8"></script>
+    <script src="./scripts/jquery.js" charset="utf-8"></script>
+    <script src="./scripts/angular.js" charset="utf-8"></script>
+    <script src="./scripts/app.js" charset="utf-8"></script>
+    <script src="./scripts/homeController.js" charset="utf-8"></script>
+    <script src="./scripts/productController.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
+</body>
+
 </html>
