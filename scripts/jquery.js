@@ -1,18 +1,21 @@
 $(document).ready(function(){
 
 
-  $('.slideshow').slick({
-    dots: true,
-    infinite: true,
-    speed: 500,
-    fade: true,
-    cssEase: 'linear',
+  $(".slideshow").slick({
     autoplay: true,
-    autoplaySpeed: 5000,
-    dotsClass: 'slick-dots',
-    arrows: false,
     dots: true,
-  });
+    responsive: [{
+        breakpoint: 500,
+        settings: {
+            dots: false,
+            arrows: true,
+            infinite: false,
+            slidesToShow: 2,
+            slidesToScroll: 2
+        }
+    }]
+});
+
 
   $('.product-overlay').hide();
   $('.curtain').hide();

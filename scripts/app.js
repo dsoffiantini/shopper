@@ -12,5 +12,10 @@ angular.module("shopper", ['ui.router'])
                 templateUrl: './views/product.html',
                 controller: 'productController'
             })
+            .state('category', {
+                url: '/category/:category',
+                templateUrl: './views/categories.html',
+                controller: 'categoryController'
+            })
 
     });
