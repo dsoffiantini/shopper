@@ -57,13 +57,19 @@ button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: white;
+  background: white;a
+  margin: 10px 10px;
+}
+
+.category-product-image-container {
+  width: 15vw;
+  height: 15vw;
+  padding: 5px;
 }
 
 .category-product-image {
-  width: 15vw;
-  height: 15vw;
-  margin: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 .category-product h2{

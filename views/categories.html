@@ -1,14 +1,14 @@
 <div class="above-category">
     <div class="category-name">Category</div>
     <div class="category-buttons">
-        <button type="button" name="button" class="filter-button">Filter</button>
+        <button type="button" name="button" class="filter-button" ng-click="filterToggle = !filterToggle">Filter</button>
         <button type="button" name="button" class="list-button">Filter</button>
         <button type="button" name="button" class="list-button">Filter</button>
     </div>
     <div class="category-listing-total">Items # to # of # total</div>
 </div>
 <main class="main-category-container">
-    <aside class="filter-products">
+    <aside class="filter-products" ng-show="filterToggle">
         <div class="sort-by">
             <h3>Sort By</h3>
             <input type="dropdown" name="name" value="">
@@ -16,8 +16,16 @@
     </aside>
     <div class="category-product-container">
         <div class="category-product">
-            <div class="category-product-image" style="background: url('./images/pupper.jpg') center no-repeat; background-size: cover;"></div>
-            <h2 class="category-page-product-title">Sample Product Title</h2>
+            <div class="category-product-image-container">
+              <div class="category-product-image" style="background: url('./images/pupper.jpg') center no-repeat; background-size: cover;">
+
+              </div>
+            </div>
+            <div class="category-product-info">
+              <h2>Sample Product Title</h2>
+              <h3>$20.00</h3>
+            </div>
+
         </div>
     </div>
 </main>

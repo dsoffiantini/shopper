@@ -46,13 +46,6 @@ body {
     top: 90vh;
 }
 
-/*----todo fix arrows---*/
-.slick-prev {
-    display: none;
-}
-.slick-next {
-    display: none;
-}
 /*---Nav---*/
 .top-nav {
     position: relative;
@@ -63,6 +56,18 @@ body {
     z-index: 1;
     display: flex;
     align-items: center;
+}
+
+.top-nav {
+  ul {
+    display: flex;
+    color: white;
+    width: 95%;
+    margin: 0px auto;
+  }
+  li {
+    margin-right: 10px;
+  }
 }
 .logo {
     background: url('../images/pupper.jpg') left no-repeat;
