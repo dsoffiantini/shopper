@@ -8,12 +8,40 @@ $(document).ready(function() {
    asNavFor: '.slider-nav'
  });
  $('.slider-nav').slick({
-   slidesToShow: 4,
+   slidesToShow: 3,
    slidesToScroll: 1,
    asNavFor: '.slider-for',
-   dots: true,
+   arrows: true,
    centerMode: true,
    focusOnSelect: true
  });
+
+ $('.tabs ul').each(function(){
+
+  var $active, $content, $links = $(this).find('a');
+
+  $active = $($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+  $active.addClass('active');
+
+  $content = $($active[0].hash);
+
+  $links.not($active).each(function () {
+    $(this.hash).hide();
+  });
+
+
+  $(this).on('click', 'a', function(e){
+    $active.removeClass('active');
+    $content.hide();
+
+    $active = $(this);
+    $content = $(this.hash);
+
+    $active.addClass('active');
+    $content.show();
+
+    e.preventDefault();
+  });
+});
 
 });

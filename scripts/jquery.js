@@ -16,9 +16,23 @@ $(document).ready(function(){
     }]
 });
 
+  // ---Hides---
 
   $('.product-overlay').hide();
   $('.curtain').hide();
+
+
+  // ---Nav---
+
+   $('.top-nav ul li').hover(function() {
+     var index = $(this).index();
+     console.log(index)
+     var position = $(this).position();
+     $('.nav-dropdown').css('left', position.left);
+
+   });
+
+
 
   $('.products').hover(function() {
     $('.products').css('box-shadow', '0px 0px 4px 4px rgba(0,0,0,.15)');
@@ -38,9 +52,30 @@ $(document).ready(function(){
     $('.curtain').show();
   });
 
-  $('.curtain').on('click',function() {
+  $('.close-modal').on('click',function() {
     $('.curtain').hide();
   });
 
+
+
+
+
+  // ---Back to Top---
+  var amountScrolled = 300;
+
+$(window).scroll(function() {
+	if ( $(window).scrollTop() > amountScrolled ) {
+		$('a.back-to-top').fadeIn('slow');
+	} else {
+		$('a.back-to-top').fadeOut('slow');
+	}
+});
+
+$('a.back-to-top').click(function() {
+	$('html, body').animate({
+		scrollTop: 0
+	}, 700);
+	return false;
+});
 
 });

@@ -40,7 +40,6 @@ body {
 
 /*---Nav---*/
 .top-nav {
-  position: relative;
   top: 0;
   height: 6vh;
   width: 100%;
@@ -57,6 +56,24 @@ body {
 
 .top-nav li {
   margin-right: 10px; }
+
+.top-nav a {
+  -moz-transition: color 0.3s ease-out;
+  -webkit-transition: color 0.3s ease-out;
+  -o-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
+  text-decoration: none;
+  color: white; }
+
+.nav-dropdown {
+  position: absolute;
+  display: flex;
+  z-index: 25000;
+  background: black;
+  color: white; }
+
+.nav-dropdown ul {
+  padding: 10px 10px; }
 
 .logo {
   background: url("../images/pupper.jpg") left no-repeat;
@@ -78,7 +95,8 @@ body {
   width: 95%;
   display: flex;
   justify-content: space-around;
-  margin: 20px auto; }
+  margin: 20px auto;
+  background: white; }
 
 .products {
   width: 30vw;
@@ -125,18 +143,33 @@ body {
 
 .brands {
   width: 95%;
-  margin: 20px auto; }
+  margin: 20px auto;
+  background: white; }
 
 .brand {
   text-align: center;
   display: flex;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+  background: white; }
 
 .brand img {
   width: 15vw;
   height: 100%;
   margin: 0 10px; }
+
+a.back-to-top {
+  display: none;
+  width: 80px;
+  height: 80px;
+  text-indent: -9999px;
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  bottom: 20px;
+  background: rgba(0, 0, 0, 0.7) url("../images/icons/up-arrow.svg") no-repeat center;
+  background-size: 60%;
+  border-radius: 5px; }
 
 .footer {
   width: 100%;
@@ -145,13 +178,17 @@ body {
   align-items: center;
   font-size: 18px;
   padding: 30px 0;
-  background: white; }
+  background: white;
+  margin-top: 20px; }
 
 .footer ul li {
   margin: 3px 0px; }
 
 .footer ul li:first-child {
   font-weight: bold; }
+
+.footer ul img {
+  height: 1rem; }
 
 .footer2 {
   display: flex;
@@ -178,3 +215,31 @@ body {
   bottom: 0;
   right: 0;
   left: 0; }
+
+.modal {
+  background: white;
+  width: 75%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+/*---modal-slider--- */
+.modal button {
+  background: white;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 50px;
+  width: 50px; }
+
+.modal button:hover {
+  border: 1px solid black;
+  border-radius: 50%; }
+
+.quick-view-image-wrapper {
+  width: 50%;
+  height: 100%; }

@@ -113,4 +113,4 @@
     display: none;
 }
 
-.slick-slider .slick-track, .slick-slider .slick-list { height: 100%; }
+.slick-slider .slick-track, .slick-slider .slick-list { height: 100%; width: 100%}
