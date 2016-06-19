@@ -22,6 +22,7 @@ angular.module('shopper').controller('productController', function($scope, $stat
                 }
             }
         }
+        return $scope.tags;
     }
 
 });

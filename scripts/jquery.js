@@ -24,14 +24,6 @@ $(document).ready(function(){
 
   // ---Nav---
 
-   $('.top-nav ul li').hover(function() {
-     var index = $(this).index();
-     console.log(index)
-     var position = $(this).position();
-     $('.nav-dropdown').css('left', position.left);
-
-   });
-
 
 
   $('.products').hover(function() {
@@ -48,6 +40,21 @@ $(document).ready(function(){
     $(this).css({'background': 'rgba(0,0,0,0)', 'color': 'white'})
   })
 
+  // ---Center Modal---
+
+  $.fn.center = function () {
+     this.css("position","absolute");
+     this.css("top", ( $(window).height() - this.height() ) / 2  + "px");
+     this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
+     return this;
+  }
+  $('.curtain').center();
+      $( window ).resize(function() {
+         $('.curtain').center();
+      });
+
+  // ---Open/Close Modal---
+
   $('.quick-view').on('click',function() {
     $('.curtain').show();
   });
@@ -55,8 +62,6 @@ $(document).ready(function(){
   $('.close-modal').on('click',function() {
     $('.curtain').hide();
   });
-
-
 
 
 
@@ -72,6 +77,13 @@ $(window).scroll(function() {
 });
 
 $('a.back-to-top').click(function() {
+	$('html, body').animate({
+		scrollTop: 0
+	}, 700);
+	return false;
+});
+
+$('.back-to-top-footer').click(function() {
 	$('html, body').animate({
 		scrollTop: 0
 	}, 700);
