@@ -9,100 +9,16 @@
     <link rel="stylesheet" href="./css/product.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./css/category.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./css/cart.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="./css/admin.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./slick/slick.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./slick/slick-theme.css" media="screen" charset="utf-8">
     <title>Shopper- Online Shopping Store!</title>
 </head>
 
 <body>
-<nav class="top-nav">
-  <ul>
-    <li><a href="/#/">Home</a></li>
-    <nav class="cd-dropdown-wrapper">
-        <a class="cd-dropdown-trigger" href="#0">Categories</a>
-        <nav class="cd-dropdown">
-            <h2>Title</h2>
-            <a href="#0" class="cd-close">Close</a>
-            <ul class="cd-dropdown-content">
-                <li>
-                    <form class="cd-search">
-                        <input type="search" placeholder="Search...">
-                    </form>
-                </li>
-                <li class="has-children">
-                    <a href="#0">Clothing</a>
-
-                    <ul class="cd-secondary-dropdown is-hidden">
-                        <li class="go-back"><a href="#0">Menu</a></li>
-                        <li class="see-all"><a href="#0">All Clothing</a></li>
-                        <li class="has-children">
-                            <a href="#0">Accessories</a>
-
-                            <ul class="is-hidden">
-                                <li class="go-back"><a href="#0">Clothing</a></li>
-                                <li class="see-all"><a href="#0">All Accessories</a></li>
-                                <li class="has-children">
-                                    <a href="#0">Beanies</a>
-
-                                    <ul class="is-hidden">
-                                        <li class="go-back"><a href="#0">Accessories</a></li>
-                                        <li class="see-all"><a href="#0">All Benies</a></li>
-                                        <li><a href="#0">Caps &amp; Hats</a></li>
-                                        <!-- other list items here -->
-                                    </ul>
-                                </li>
-                                <li class="has-children">
-                                    <a href="#0">Caps &amp; Hats</a>
-
-                                    <ul class="is-hidden">
-                                        <li class="go-back"><a href="#0">Accessories</a></li>
-                                        <li class="see-all"><a href="#0">All Caps &amp; Hats</a></li>
-                                        <li><a href="#0">Beanies</a></li>
-                                        <!-- other list items here -->
-                                    </ul>
-                                </li>
-                                <li><a href="#0">Glasses</a></li>
-                                <!-- other list items here -->
-                            </ul>
-                        </li>
-
-                        <li class="has-children">
-                            <!-- other list items here -->
-                        </li>
-
-                        <li class="has-children">
-                            <!-- other list items here -->
-                        </li>
-
-                        <li class="has-children">
-                            <!-- other list items here -->
-                        </li>
-                    </ul>
-                    <!-- .cd-secondary-dropdown -->
-                </li>
-                <!-- .has-children -->
-
-                <li class="has-children">
-                    <!-- other list items here -->
-                </li>
-                <!-- .has-children -->
-
-                <li class="has-children">
-                    <!-- other list items here -->
-                </li>
-                <!-- .has-children -->
-
-                <li class="cd-divider">Divider</li>
-
-                <li><a href="#0">Page 1</a></li>
-
-
-            </ul>
-        </nav>
+    <nav class="top-nav">
+        <li><a href="/#/">Home</a></li>
     </nav>
-
-    </ul>
-</nav>
 
 
     <ui-view>
@@ -159,16 +75,18 @@
     <script src="./scripts/jquery-3.0.0.js" charset="utf-8"></script>
     <script src="./slick/slick.js" charset="utf-8"></script>
     <script src="./scripts/jquery.menu-aim.js" charset="utf-8"></script>
-    <script src=".\scripts\modernizr.js" charset="utf-8"></script>
-    <script src="./scripts/megamenu.js" charset="utf-8"></script>
     <script src="./scripts/jquery.js" charset="utf-8"></script>
     <script src="./scripts/angular.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
     <script src="./scripts/app.js" charset="utf-8"></script>
     <script src="./scripts/controllers/homeController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/productController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/categoryController.js" charset="utf-8"></script>
+    <script src="./scripts/controllers/brandController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/cartController.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
+    <script src="./scripts/controllers/adminController.js" charset="utf-8"></script>
+    <script src="./scripts/services/brandService.js" charset="utf-8"></script>
+    <script src="./scripts/services/productService.js" charset="utf-8"></script>
 </body>
 
 </html>

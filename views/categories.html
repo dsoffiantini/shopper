@@ -11,23 +11,27 @@
     <aside class="filter-products" ng-show="filterToggle">
         <div class="sort-by">
             <h3>Sort By</h3>
-            <input type="dropdown" name="name" value="">
+            <select ng-model="sortBy">
+                <option value="pricedown" selected>Price desc.</option>
+                <option value="priceup">Price asc.</option>
+                <option value="namedown">Name desc.</option>
+                <option value="nameup">Name asc.</option>
+            </select>
         </div>
     </aside>
     <div class="category-product-container">
-        <div class="category-product">
+        <div class="category-product" ng-repeat="product in categoryProducts">
             <div class="category-product-image-container">
-                <div class="category-product-image" style="background: url('./images/pupper.jpg') center no-repeat; background-size: cover;">
+                <div class="category-product-image" style="background: url('{{product.image}}') center no-repeat; background-size: contain;">
 
                 </div>
             </div>
             <div class="category-product-info">
-                <h2>Sample Product Title</h2>
-                <h3>$20.00</h3>
+                <h2>{{product.name}}</h2>
+                <h3>{{product.price}}</h3>
             </div>
 
         </div>
-
     </div>
 </main>
 <script src="./scripts/category.js" charset="utf-8"></script>

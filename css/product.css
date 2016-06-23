@@ -19,7 +19,6 @@
 
 .main-product-info {
     width: 30vw;
-    margin-left: 5%;
 }
 .main-product-info h2 {
     font-size: 30px;
@@ -27,9 +26,10 @@
 }
 
 .main-product-info h3 {
-  font-size: 22px;
-  color: pink;
+  font-size: 20px;
+  color: #e03470;
   margin-bottom: 5%;
+  font-weight: bold;
 }
 
 .main-product-info p {
@@ -93,7 +93,7 @@
 }
 
 .tabs ul li a:hover {
-  color: pink;
+  color: #e03470;
 }
 
 .tabs-below {

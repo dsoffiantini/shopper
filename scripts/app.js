@@ -27,5 +27,20 @@ angular.module("shopper", ['ui.router'])
                 templateUrl: './views/categories.html',
                 controller: 'categoryController'
             })
+            .state('admin', {
+                url: '/admin',
+                templateUrl: './views/admin.html',
+                controller: 'adminController'
+            })
+            .state('admin.addProduct', {
+                url: '/add',
+                templateUrl: './views/add-product.html',
+                controller: 'adminController'
+            })
+            .state('admin.deleteProduct', {
+                url: '/delete',
+                templateUrl: './views/delete-product.html',
+                controller: 'adminController'
+            })
 
     });

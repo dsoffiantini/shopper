@@ -48,7 +48,6 @@ button {
   width: 95%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   margin: 0px auto;
 }
 
@@ -58,7 +57,7 @@ button {
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
-  background: white;a
+  background: white;
   margin: 10px 10px 10px 10px;
   text-align: center;
 }

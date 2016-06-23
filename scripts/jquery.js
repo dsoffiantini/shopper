@@ -4,17 +4,27 @@ $(document).ready(function(){
   $(".slideshow").slick({
     autoplay: true,
     dots: true,
+    arrows: false,
     responsive: [{
         breakpoint: 500,
         settings: {
             dots: false,
-            arrows: true,
+            arrows: false,
             infinite: false,
             slidesToShow: 2,
             slidesToScroll: 2
         }
     }]
 });
+
+$(".products-container").slick({
+  slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: true,
+        prevArrow: '.btn-prev',
+        nextArrow: '.btn-next'
+});
+
 
   // ---Hides---
 
@@ -28,7 +38,7 @@ $(document).ready(function(){
 
   $('.products').hover(function() {
     $('.products').css('box-shadow', '0px 0px 4px 4px rgba(0,0,0,.15)');
-    $('.product-overlay').show();
+    $(this).find('.product-overlay').show();
   }, function() {
     $('.products').css('box-shadow', '0px 0px 6px 0px rgba(0,0,0,.15)');
     $('.product-overlay').hide();
