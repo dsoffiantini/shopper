@@ -17,7 +17,33 @@
 
 <body>
     <nav class="top-nav">
-        <li><a href="/#/">Home</a></li>
+        <ul>
+            <li><a href="/#/">Home</a></li>
+            <li><a href="#">Clothing</a>
+                <ul>
+                    <li>Lips</li>
+                    <li>Eyes</li>
+                </ul>
+            </li>
+            <li><a href="#">Clothing</a>
+                <ul>
+                    <li>Feet</li>
+                    <li>Eyes</li>
+                </ul>
+            </li>
+
+        </ul>
+        <li class="cart"><img src="images\icons\shopping-cart.svg" alt="Cart" />
+          <div class="cart-content">
+            <ul class="cart-items">
+              <li>Your Cart is Empty</li>
+              <li>Product1</li>
+              <li>Product2</li>
+              <li>Product3</li>
+            </ul>
+          </div>
+
+        </li>
     </nav>
 
 
@@ -85,6 +111,7 @@
     <script src="./scripts/controllers/brandController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/cartController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/adminController.js" charset="utf-8"></script>
+    <script src="./scripts/controllers/quickViewController.js" charset="utf-8"></script>
     <script src="./scripts/services/brandService.js" charset="utf-8"></script>
     <script src="./scripts/services/productService.js" charset="utf-8"></script>
 </body>

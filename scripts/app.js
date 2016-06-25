@@ -42,5 +42,10 @@ angular.module("shopper", ['ui.router'])
                 templateUrl: './views/delete-product.html',
                 controller: 'adminController'
             })
+            .state('home.quickView', {
+                url: 'quick-view',
+                templateUrl: './views/quick-view.html',
+                controller: 'quickViewController'
+            })
 
     });

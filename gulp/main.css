@@ -35,8 +35,8 @@ body {
   color: white;
   text-align: center; }
 
-.slick-prev:before,
-.slick-next:before {
+.slick-next:before,
+.slick-prev:before {
   color: black; }
 
 .slick-dots {
@@ -45,21 +45,61 @@ body {
 
 /*---Nav---*/
 .top-nav {
+  position: absolute;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: black;
   z-index: 1;
-  display: flex;
   align-items: center;
-  padding: 0px 2.5%;
-  list-style: none; }
+  padding: 0 2.5%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between; }
+
+.top-nav ul {
+  display: flex;
+  position: relative;
+  align-items: center; }
 
 .top-nav li {
-  padding: 16px 0px; }
+  padding: 16px 0; }
 
 .top-nav a {
   text-decoration: none;
-  color: white; }
+  color: white;
+  margin-right: 16px; }
+
+.top-nav ul ul {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: white;
+  width: 100%;
+  display: none; }
+
+.top-nav ul ul li {
+  flex: 1;
+  margin: 0px 10px;
+  width: 100%; }
+
+.cart {
+  position: relative; }
+
+.cart img {
+  height: 20px; }
+
+.cart-content {
+  position: absolute;
+  top: 54px;
+  right: -20px;
+  background: white;
+  white-space: nowrap;
+  padding: 5px 20px;
+  display: flex; }
+
+.cart-content ul {
+  display: flex;
+  flex-direction: column; }
 
 /*---Homepage Products---*/
 .featured-products {
@@ -67,7 +107,7 @@ body {
   background: white;
   text-align: center;
   margin: 20px auto;
-  padding: 10px 0px; }
+  padding: 10px 0; }
 
 .featured-products h2 {
   display: flex;
@@ -83,11 +123,15 @@ body {
   flex-wrap: wrap;
   margin-top: 10px; }
 
+.products-container > .slick-dots {
+  top: 98%; }
+
 .products {
   width: 30vw;
   box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
   text-align: center;
-  position: relative; }
+  position: relative;
+  margin: 20px 0; }
 
 .products a {
   text-decoration: none;
@@ -139,13 +183,13 @@ body {
   background: white; }
 
 .brand {
-  text-align: center;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background: white; }
 
 .brand a img {
+  display: flex;
   width: 15vw;
   height: 100%;
   margin: 0 10px; }
@@ -174,7 +218,7 @@ a.back-to-top {
   margin-top: 20px; }
 
 .footer ul li {
-  margin: 3px 0px;
+  margin: 3px 0;
   font-size: 12px; }
 
 .footer ul li:first-child {
