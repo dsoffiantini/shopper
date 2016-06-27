@@ -35,9 +35,59 @@
         </div>
     </content>
   </section>
+  <section class="featured-products">
+      <h2>Featured Products</h2>
+    <content class="products-container-2">
+
+            <div class="products" ng-repeat="product in products">
+
+                <div class="product-thumb">
+
+                  <div class="product-thumb-img" style="background: url('{{product.image}}') center no-repeat; background-size: contain;"></div>
+
+
+
+                    <div class="product-overlay">
+                        <button class="quick-view" ui-sref="home.quickView">Quick View</button>
+                    </div>
+
+                </div>
+                <a ui-sref="product({productID: product.name})">
+                <div class="product-title">{{product.name}}</div>
+                <div class="product-price">{{product.price}}</div>
+        </a>
+
+        </div>
+    </content>
+  </section>
+  <section class="featured-products">
+      <h2>Featured Products</h2>
+    <content class="products-container-3">
+
+            <div class="products" ng-repeat="product in products">
+
+                <div class="product-thumb">
+
+                  <div class="product-thumb-img" style="background: url('{{product.image}}') center no-repeat; background-size: contain;"></div>
+
+
+
+                    <div class="product-overlay">
+                        <button class="quick-view" ui-sref="home.quickView">Quick View</button>
+                    </div>
+
+                </div>
+                <a ui-sref="product({productID: product.name})">
+                <div class="product-title">{{product.name}}</div>
+                <div class="product-price">{{product.price}}</div>
+        </a>
+
+        </div>
+    </content>
+  </section>
   <div ui-view></div>
-    <content class="brands" ng-repeat="brand in brands">
-        <div class="brand">
+    <content class="brands">
+        <div class="brand" ng-repeat="brand in brands">
             <a ui-sref="brand({brand: brand.name})"><img ng-src="{{brand.image}}" alt="{{brand.name}}" /></a>
         </div>
     </content>

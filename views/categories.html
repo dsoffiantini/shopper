@@ -17,6 +17,8 @@
                 <option value="namedown">Name desc.</option>
                 <option value="nameup">Name asc.</option>
             </select>
+            <h3>Price</h3>
+            {{minPrice | currency}}<input type="range" name="price" min="{{minPrice}}" max="{{maxPrice}}" ng-model="priceFilter">{{maxPrice | currency}}
         </div>
     </aside>
     <div class="category-product-container">
@@ -35,3 +37,4 @@
     </div>
 </main>
 <script src="./scripts/category.js" charset="utf-8"></script>
+<script src="./node_modules/angular-utils-pagination/dirPagination.js" charset="utf-8"></script>

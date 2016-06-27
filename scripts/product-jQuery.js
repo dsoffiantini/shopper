@@ -16,6 +16,15 @@ $(document).ready(function() {
    focusOnSelect: true
  });
 
+ $(".related-products-container").slick({
+   slidesToShow: 4,
+         slidesToScroll: 1,
+         dots: true,
+         prevArrow: '.btn-prev',
+         nextArrow: '.btn-next',
+         autoplay: true
+ });
+
  $('.tabs ul').each(function(){
 
   var $active, $content, $links = $(this).find('a');

@@ -1,6 +1,6 @@
 .breadcrumbs {
-    padding: 3px 10px;
-    margin-bottom: 10px;
+    padding: 3px 5%;
+    margin: 10px 0px;
 }
 .breadcrumbs a {
     text-decoration: none;
@@ -35,11 +35,6 @@
 .main-product-info p {
   margin-top: 5%;
 }
-/*.sidebar {
-    width: 200px;
-    margin: 0px 10px;
-    border: 1px solid black;
-}*/
 
 .buttons {
   margin-top: 10px;

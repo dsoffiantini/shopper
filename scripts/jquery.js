@@ -24,6 +24,25 @@ $(".products-container").slick({
         prevArrow: '.btn-prev',
         nextArrow: '.btn-next'
 });
+
+$(".products-container-2").slick({
+  slidesToShow: 6,
+        slidesToScroll: 1,
+        dots: true,
+        prevArrow: '.btn-prev',
+        nextArrow: '.btn-next',
+        autoplay: true
+});
+
+$(".products-container-3").slick({
+  slidesToShow: 6,
+        slidesToScroll: 1,
+        dots: true,
+        prevArrow: '.btn-prev',
+        nextArrow: '.btn-next',
+        autoplay: true
+});
+
 //
 // $(".brand").slick({
 //   slidesToShow: 5,

@@ -53,6 +53,9 @@ body {
     align-items: center;
     padding: 0 2.5%;
     list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .top-nav ul {
@@ -74,7 +77,7 @@ body {
   top: 48px;
   left: 0;
   background: white;
-  width: 100%;
+  min-width: 93vw;
 }
 
 .top-nav ul ul li {
@@ -84,19 +87,18 @@ body {
 
 .searchbox {
   width: 30vw;
-  padding: 3px 0px;
-  background: rgba(0,0,0,0);
-  border: none;
-  border-bottom: 1px solid white;
 }
 
-.searchbox button {
-  background: "../images/icons/magnifying-glass.svg";
+.searchbox input {
+  background: black;
+  color: white;
+  border: 1px solid white;
+  padding: 3px 20px;
+  text-align: center;
 }
 
-.cart {
-  position: absolute;
-  right: 0px;
+.searchbox img {
+  height: 20px;
 }
 
 .cart img {
@@ -105,8 +107,10 @@ body {
 
 .cart-content {
   position: absolute;
-  top: 54px;
-  right: -20px;
+  left: auto;
+  right: 100%;
+  margin-left: 0;
+  margin-right: -1px;
   background: white;
   white-space: nowrap;
   padding: 5px 20px;
@@ -117,14 +121,16 @@ body {
   flex-direction: column;
 }
 /*---Homepage Products---*/
-.featured-products {
-    width: 95%;
+.featured-products,
+.related-products {
+    width: 90%;
     background: white;
     text-align: center;
     margin: 20px auto;
     padding: 10px 0;
 }
-.featured-products h2 {
+.featured-products h2,
+.related-products h2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -132,13 +138,28 @@ body {
     font-size: 40px;
     margin: 10px auto;
 }
-.products-container {
+.products-container,
+.products-container-2,
+.products-container-3,
+.related-products-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 10px;
 }
 .products-container > .slick-dots {
+    top: 98%;
+}
+
+.products-container-2 > .slick-dots {
+    top: 98%;
+}
+
+.products-container-3 > .slick-dots {
+    top: 98%;
+}
+
+.related-products-container > .slick-dots {
     top: 98%;
 }
 .products {
@@ -194,7 +215,7 @@ body {
 }
 // ---Homepage Brands---
 .brands {
-    width: 95%;
+    width: 90%;
     margin: 20px auto;
     background: white;
 }
