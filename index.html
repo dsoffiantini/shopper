@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/category.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./css/cart.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./css/admin.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="./css/wishlist.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./slick/slick.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./slick/slick-theme.css" media="screen" charset="utf-8">
     <title>Shopper- Online Shopping Store!</title>
@@ -20,13 +21,13 @@
         <ul>
             <li><a href="/#/">Home</a></li>
             <li><a href="#">Clothing</a>
-                <ul>
+                <ul class="category-dropdown">
                     <li>Lips</li>
                     <li>Eyes</li>
                 </ul>
             </li>
             <li><a href="#">Clothing</a>
-                <ul>
+                <ul class="category-dropdown">
                     <li>Feet</li>
                     <li>Eyes</li>
                 </ul>
@@ -36,17 +37,16 @@
               <li class="searchbox"><input type="text" name="search" placeholder="Search the Store..."><img src="images\icons\magnifying-glass.svg" alt="Search Button" /></li>
 
             </ul>
-            <ul>
-              <li class="cart"><img src="images\icons\shopping-cart.svg" alt="Cart" />
-                <div class="cart-content">
-                  <ul class="cart-items">
+            <ul class="cart">
+              <li><img src="images\icons\shopping-cart.svg" alt="Cart" />
+                  <ul class="cart-content">
                     <li>Your Cart is Empty</li>
                     <li>Product1</li>
                     <li>Product2</li>
                     <li>Product3</li>
                   </ul>
-                </div>
               </li>
+
             </ul>
 
 
@@ -118,6 +118,7 @@
     <script src="./scripts/controllers/cartController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/adminController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/quickViewController.js" charset="utf-8"></script>
+    <script src="./scripts/controllers/wishlistController.js" charset="utf-8"></script>
     <script src="./scripts/services/brandService.js" charset="utf-8"></script>
     <script src="./scripts/services/productService.js" charset="utf-8"></script>
 </body>

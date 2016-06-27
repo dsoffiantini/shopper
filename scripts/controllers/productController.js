@@ -22,24 +22,26 @@ angular.module('shopper').controller('productController', function($scope, $stat
     $scope.tags = [];
 
     $scope.addTag = function(tag) {
-        if ($scope.tags.length === 0) {
-            $scope.tags.push({
-                name: tag,
-                count: 1
-            });
-        } else {
-            for (var i = 0; i < $scope.tags.length; i++) {
-                if ($scope.tags[i].name === tag) {
-                    $scope.tags[i].count++;
-                } else if ($scope.tags[i].name !== tag) {
-                    $scope.tags.push({
-                        name: tag,
-                        count: 1
-                    })
-                }
-            }
+      if ($scope.tags.length === 0) {
+        $scope.tags.push(tag)
+      }
+      else {
+        for (var i = 0; i < $scope.tags.length; i++) {
+          if ($scope.tags[i] !== tag) {
+            $scope.tags.push(tag);
+          }
         }
-        console.log($scope.tags)
+      }
     }
+
+    $scope.relatedProducts = [];
+
+    // $scope.getRelatedProducts = function() {
+    //   var related = productService.getCategoryProducts($scope.product.category);
+    //   for (var i = 0; i < 10; i++) {
+    //     $scope.relatedProducts.push()
+    //   }
+    //
+    // }
 
 });

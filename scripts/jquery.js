@@ -26,7 +26,7 @@ $(".products-container").slick({
 });
 
 $(".products-container-2").slick({
-  slidesToShow: 6,
+  slidesToShow: 5,
         slidesToScroll: 1,
         dots: true,
         prevArrow: '.btn-prev',
@@ -35,7 +35,7 @@ $(".products-container-2").slick({
 });
 
 $(".products-container-3").slick({
-  slidesToShow: 6,
+  slidesToShow: 5,
         slidesToScroll: 1,
         dots: true,
         prevArrow: '.btn-prev',
@@ -43,10 +43,10 @@ $(".products-container-3").slick({
         autoplay: true
 });
 
-//
-// $(".brand").slick({
-//   slidesToShow: 5,
-//         slidesToScroll: 1,
+
+// $(".brands").slick({
+//   slidesToShow: 3,
+//         slidesToScroll: 3,
 //         dots: true,
 //         prevArrow: '.btn-prev',
 //         nextArrow: '.btn-next'
@@ -73,6 +73,11 @@ $(".products-container-3").slick({
   }, function() {
     $('.cart-content').hide();
   });
+
+  // var cartwidth = $('.cart-content').width();
+  //
+  //
+  // $('.cart-content').css("left", -cartwidth);
 
 
 

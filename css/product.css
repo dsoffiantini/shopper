@@ -211,3 +211,26 @@ label.star:before{
   width: 100%;
   padding: 5px;
 }
+
+/*---Added to Cart---*/
+
+.product-added {
+  width: 250px;
+  min-width: 250px;
+  background: rgba(255,255,255,.8);
+  margin: 0px auto;
+  text-align: center;
+  z-index: 5000000000;
+}
+
+.product-added h6 {
+  margin: 5px 5px;
+}
+
+.product-added span {
+  font-weight: bold;
+}
+
+.product-added button {
+  margin: 10px auto;
+}

@@ -47,5 +47,10 @@ angular.module("shopper", ['ui.router'])
                 templateUrl: './views/quick-view.html',
                 controller: 'quickViewController'
             })
+            .state('wishlist', {
+                url: '/wishlist',
+                templateUrl: './views/wishlist.html',
+                controller: 'wishlistController'
+            })
 
     });
