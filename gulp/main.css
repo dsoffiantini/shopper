@@ -45,16 +45,14 @@ body {
 
 /*---Nav---*/
 .top-nav {
-  position: absolute;
+  position: relative;
   top: 0;
   width: 100%;
   background: black;
   z-index: 1;
   align-items: center;
   padding: 0 2.5%;
-  list-style: none;
-  display: flex;
-  justify-content: space-between; }
+  list-style: none; }
 
 .top-nav ul {
   display: flex;
@@ -74,16 +72,25 @@ body {
   top: 48px;
   left: 0;
   background: white;
-  width: 100%;
-  display: none; }
+  width: 100%; }
 
 .top-nav ul ul li {
   flex: 1;
-  margin: 0px 10px;
-  width: 100%; }
+  margin: 0px 10px; }
+
+.searchbox {
+  width: 30vw;
+  padding: 3px 0px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white; }
+
+.searchbox button {
+  background: "../images/icons/magnifying-glass.svg"; }
 
 .cart {
-  position: relative; }
+  position: absolute;
+  right: 0px; }
 
 .cart img {
   height: 20px; }
@@ -94,8 +101,7 @@ body {
   right: -20px;
   background: white;
   white-space: nowrap;
-  padding: 5px 20px;
-  display: flex; }
+  padding: 5px 20px; }
 
 .cart-content ul {
   display: flex;
@@ -128,10 +134,9 @@ body {
 
 .products {
   width: 30vw;
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
   text-align: center;
   position: relative;
-  margin: 20px 0; }
+  margin: 20px 5px; }
 
 .products a {
   text-decoration: none;
