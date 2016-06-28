@@ -17,7 +17,15 @@
   },
   "homepage": "https://github.com/dsoffiantini/shopper#readme",
   "dependencies": {
+    "angular-utils-pagination": "^0.11.1",
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "express-session": "^1.13.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^2.3.1"
+    "gulp-sass": "^2.3.1",
+    "mongoose": "^4.5.2",
+    "ng-dialog": "^0.6.2",
+    "passport": "^0.3.2"
   }
 }

@@ -8,6 +8,7 @@ angular.module('shopper').controller('productController', function($scope, $stat
 
     $scope.products = productService.getProducts();
 
+
     $scope.productGrab = function getProducts() {
 
         for (var i = 0; i < $scope.products.length; i++) {

@@ -1,4 +1,4 @@
-angular.module("shopper").service("productService", function() {
+angular.module("shopper").service("productService", function($http, $q) {
 
   var categories = [
     {
@@ -73,8 +73,19 @@ angular.module("shopper").service("productService", function() {
     return categories;
   }
 
+  // this.getProducts = function() {
+  //   return products;
+  // }
+
   this.getProducts = function() {
-    return products;
+    return $http({
+      method: 'GET',
+      url: '/api/products'
+    }).then(function(response) {
+      console.log(response);
+    }, function(err) {
+      console.log(err);
+    })
   }
 
   this.getCategoryProducts = function(category) {
