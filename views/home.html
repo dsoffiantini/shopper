@@ -23,7 +23,7 @@
 
 
                     <div class="product-overlay">
-                        <button class="quick-view" ui-sref="home.quickView">Quick View</button>
+                      <button class="quick-view" ng-click="clickToOpen(product)">Quick View</button>
                     </div>
 
                 </div>
@@ -48,7 +48,7 @@
 
 
                     <div class="product-overlay">
-                        <button class="quick-view" ui-sref="home.quickView">Quick View</button>
+                        <button class="quick-view" ng-click="clickToOpen(product)">Quick View</button>
                     </div>
 
                 </div>
@@ -73,7 +73,7 @@
 
 
                     <div class="product-overlay">
-                        <button class="quick-view" ui-sref="home.quickView">Quick View</button>
+                      <button class="quick-view" ng-click="clickToOpen(product)">Quick View</button>
                     </div>
 
                 </div>
@@ -85,7 +85,6 @@
         </div>
     </content>
   </section>
-  <div ui-view></div>
     <content class="brands">
         <div class="brand" ng-repeat="brand in brands">
             <a ui-sref="brand({brand: brand.name})"><img ng-src="{{brand.image}}" alt="{{brand.name}}" /></a>

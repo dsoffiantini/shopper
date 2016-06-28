@@ -1,18 +1,24 @@
 <div class="curtain">
     <div class="modal">
-        <button type="button" name="close-modal" class="close-modal">X</button>
-        <div class="quick-view-image-container">
-            <div class="quick-view-image-wrapper">
-                <div class="slider slider-for">
-                    <div><img src="images\beach.jpg" alt="" /></div>
-                    <div><img src="images\pupper.jpg" alt="" /></div>
-                </div>
-                <div class="slider slider-nav">
-                    <div><img src="images\beach.jpg" alt="" /></div>
-                    <div><img src="images\pupper.jpg" alt="" /></div>
+        <button type="button" name="close-modal" class="close-modal" ng-click="closeThisDialog()">X</button>
+        <section class="quick-view-images" style="background: url('{{product.image}}') center no-repeat; background-size: cover;">
 
-                </div>
-            </div>
-        </div>
+        </section>
+        <section class="quick-view-product-info">
+          <h2>{{product.name}}</h2>
+          <h4>{{product.price}}</h4>
+          <p>
+            {{product.description}}
+          </p>
+          <div class="buttons">
+              <button type="button" name="button" class=" product-button add-to-cart" ng-click="productAddedToggle = !productAddedToggle" ng-click="addToCart()"><img src="images\icons\shopping-cart.svg" alt="Add to Cart"/>Add To Cart</button>
+              <button type="button" name="button" class=" product-button" ng-click="addToWishlist()"><img src="images\icons\heart.svg" alt="Add to Wish List"/>Add To Wish List</button>
+              <button type="button" name="button" class=" product-button" ng-click = "addToCompare()"><img src="images\icons\copy.svg" alt="Compare"/>Add To Compare</button>
+          </div>
+
+        </section>
+
+
+
     </div>
 </div>

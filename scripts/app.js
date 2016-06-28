@@ -1,4 +1,4 @@
-angular.module("shopper", ['ui.router', 'angularUtils.directives.dirPagination'])
+angular.module("shopper", ['ui.router', 'angularUtils.directives.dirPagination', 'ngDialog'])
     .config(function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
@@ -41,11 +41,6 @@ angular.module("shopper", ['ui.router', 'angularUtils.directives.dirPagination']
                 url: '/delete',
                 templateUrl: './views/delete-product.html',
                 controller: 'adminController'
-            })
-            .state('home.quickView', {
-                url: 'quick-view',
-                templateUrl: './views/quick-view.html',
-                controller: 'quickViewController'
             })
             .state('wishlist', {
                 url: '/wishlist',

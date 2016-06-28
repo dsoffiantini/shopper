@@ -1,4 +1,4 @@
-angular.module('shopper').controller('productController', function($scope, $state, $stateParams, productService) {
+angular.module('shopper').controller('productController', function($scope, $state, $stateParams, ngDialog, productService) {
 
     $scope.url = $state.href($state.current.name);
 
@@ -43,5 +43,14 @@ angular.module('shopper').controller('productController', function($scope, $stat
     //   }
     //
     // }
+
+    $scope.clickToOpen = function(product) {
+      var newScope = $scope.$new();
+        newScope.product = product;
+          ngDialog.open({
+            template: './views/quick-view.html',
+            scope: newScope
+          });
+      };
 
 });
