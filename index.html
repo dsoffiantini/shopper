@@ -16,23 +16,17 @@
     <title>Shopper- Online Shopping Store!</title>
 </head>
 
-<body>
+<body ng-controller="indexController">
     <nav class="top-nav">
-        <ul>
-            <li><a href="/#/">Home</a></li>
-            <li><a href="#">Clothing</a>
-                <ul class="category-dropdown">
-                    <li>Lips</li>
-                    <li>Eyes</li>
+        <ul >
+            <li><a ui-sref="home">Home</a></li>
+            <li ng-repeat="category in categories"><a ui-sref="category({category: category.name})">{{category.name}}</a>
+                <ul class="category-dropdown" >
+                    <li ng-repeat="subcategory in category.subcategories">{{subcategory}}</li>
+
                 </ul>
             </li>
-            <li><a href="#">Clothing</a>
-                <ul class="category-dropdown">
-                    <li>Feet</li>
-                    <li>Eyes</li>
-                </ul>
-            </li>
-            </ul>
+        </ul>
             <ul>
               <li class="searchbox"><input type="text" name="search" placeholder="Search the Store..."><img src="images\icons\magnifying-glass.svg" alt="Search Button" /></li>
 
@@ -108,9 +102,11 @@
     <script src="./scripts/jquery-3.0.0.js" charset="utf-8"></script>
     <script src="./slick/slick.js" charset="utf-8"></script>
     <script src="./scripts/jquery.js" charset="utf-8"></script>
+    <script src="./scripts/nouislider.min.js" charset="utf-8"></script>
     <script src="./scripts/angular.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
     <script src="./scripts/app.js" charset="utf-8"></script>
+    <script src="./scripts/controllers/indexController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/homeController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/productController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/categoryController.js" charset="utf-8"></script>
@@ -121,6 +117,8 @@
     <script src="./scripts/controllers/wishlistController.js" charset="utf-8"></script>
     <script src="./scripts/services/brandService.js" charset="utf-8"></script>
     <script src="./scripts/services/productService.js" charset="utf-8"></script>
+    <script src="./node_modules/angular-utils-pagination/dirPagination.js" charset="utf-8"></script>
+
 </body>
 
 </html>

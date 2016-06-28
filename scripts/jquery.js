@@ -22,7 +22,8 @@ $(".products-container").slick({
         slidesToScroll: 3,
         dots: true,
         prevArrow: '.btn-prev',
-        nextArrow: '.btn-next'
+        nextArrow: '.btn-next',
+        autoplay: true
 });
 
 $(".products-container-2").slick({
@@ -73,6 +74,14 @@ $(".products-container-3").slick({
   }, function() {
     $('.cart-content').hide();
   });
+
+  $(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 50) {
+        $('.top-nav').css('position','fixed');
+    } else {
+        $('.top-nav').css('position','relative');
+    }
+});
 
   // var cartwidth = $('.cart-content').width();
   //

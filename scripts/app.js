@@ -1,4 +1,4 @@
-angular.module("shopper", ['ui.router'])
+angular.module("shopper", ['ui.router', 'angularUtils.directives.dirPagination'])
     .config(function($stateProvider, $urlRouterProvider) {
 
         $stateProvider

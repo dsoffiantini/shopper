@@ -95,8 +95,8 @@ body {
 .searchbox input {
   background: black;
   color: white;
-  border: 1px solid white;
-  padding: 3px 20px;
+  border: none;
+  padding: 8px 30px;
   text-align: center;
 }
 
@@ -213,6 +213,7 @@ body {
 }
 .product-title {
     font-weight: bold;
+    height: 32px;
 }
 .product-price {
     color: #e03470;

@@ -10,33 +10,41 @@
 <main class="main-category-container">
     <aside class="filter-products" ng-show="filterToggle">
         <div class="sort-by">
-            <h3>Sort By</h3>
-            <select ng-model="sortBy">
-                <option value="pricedown" selected>Price desc.</option>
-                <option value="priceup">Price asc.</option>
-                <option value="namedown">Name desc.</option>
-                <option value="nameup">Name asc.</option>
-            </select>
-            <h3>Price</h3>
-            {{minPrice | currency}}<input type="range" name="price" min="{{minPrice}}" max="{{maxPrice}}" ng-model="priceFilter">{{maxPrice | currency}}
+            <ul>
+                <li>
+                    <h3>Sort By</h3>
+                    <select ng-model="sortBy">
+                        <option value="pricedown" selected>Price desc.</option>
+                        <option value="priceup">Price asc.</option>
+                        <option value="namedown">Name desc.</option>
+                        <option value="nameup">Name asc.</option>
+                    </select>
+                </li>
+                <li>
+                    <h3>Price</h3> {{minPrice | currency}}
+                    <input type="range" name="price" min="{{minPrice}}" max="{{maxPrice}}" ng-model="priceFilter">{{maxPrice | currency}}</li>
+            </ul>
+
+
         </div>
     </aside>
     <div class="category-product-container">
-        <div class="category-product" ng-repeat="product in categoryProducts">
+        <div class="category-product" dir-paginate="product in categoryProducts | itemsPerPage: 4">
             <div class="category-product-image-container">
                 <div class="category-product-image" style="background: url('{{product.image}}') center no-repeat; background-size: contain;">
 
                 </div>
             </div>
             <div class="category-product-info">
-              <a ui-sref="product({productID: product.name})">
-                <h2>{{product.name}}</h2>
-                <h3>{{product.price}}</h3>
-              </a>
+                <a ui-sref="product({productID: product.name})">
+                    <h2>{{product.name}}</h2>
+                    <h3>{{product.price}}</h3>
+                </a>
             </div>
 
         </div>
     </div>
 </main>
+<dir-pagination-controls></dir-pagination-controls>
 <script src="./scripts/category.js" charset="utf-8"></script>
 <script src="./node_modules/angular-utils-pagination/dirPagination.js" charset="utf-8"></script>
