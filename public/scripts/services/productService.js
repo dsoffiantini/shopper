@@ -73,20 +73,20 @@ angular.module("shopper").service("productService", function($http, $q) {
     return categories;
   }
 
-  // this.getProducts = function() {
-  //   return products;
-  // }
-
   this.getProducts = function() {
-    return $http({
-      method: 'GET',
-      url: '/api/products'
-    }).then(function(response) {
-      console.log(response);
-    }, function(err) {
-      console.log(err);
-    })
+    return products;
   }
+
+  // this.getProducts = function() {
+  //   return $http({
+  //     method: 'GET',
+  //     url: '/api/products'
+  //   }).then(function(response) {
+  //     return response;
+  //   }, function(err) {
+  //     console.log(err);
+  //   })
+  // }
 
   this.getCategoryProducts = function(category) {
     var categoryProducts = [];

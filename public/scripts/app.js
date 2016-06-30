@@ -1,4 +1,4 @@
-angular.module("shopper", ['ui.router', 'angularUtils.directives.dirPagination', 'ngDialog'])
+angular.module("shopper", ['ui.router', 'angularUtils.directives.dirPagination', 'ngDialog', 'ngRangeSlider'])
     .config(function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
