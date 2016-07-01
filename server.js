@@ -1,16 +1,40 @@
-var express = require('express');
+//node_modules requires
+
 var bodyParser = require('body-parser');
 var cors = require('cors');
-// var passport = require('passport');
+var express = require('express');
+var mongoose = require('mongoose');
 // var FacebookStrategy = require('passport-facebook').Strategy;
+// var passport = require('passport');
+
+//internal requires
+
 // var cart = require('./serverControllers/cartCtrl');
 // var orders = require('./serverControllers/orderCtrl');
 // var users = require('./serverControllers/userCtrl');
 
+//express setup
 
 var app = express();
 app.use(bodyParser.json());
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(cors());
+
+//mongoose setup
+
+// var shopper = mongoose.connect('mongodb://localhost/Shopper');
+//
+// var product = new Schema({
+//   name: String,
+//   price: Number,
+//   category: String,
+//   subcategory: String,
+//   description: String,
+//   image: Array,
+//   featured: Boolean,
+//   inStock: Boolean,
+// });
+
 
 
 var products = [
@@ -64,7 +88,7 @@ var products = [
     featured: false
   },
   {
-    name: "Cutout Black One-Piece Bandage",
+    name: "test",
     price: 21.99,
     category: "Swimwear",
     subcategory: "One Piece",
@@ -74,6 +98,10 @@ var products = [
     featured: false
   }
 ]
+
+var cart = [];
+
+var wishlist = [];
 
 var categories = [
   {
@@ -87,19 +115,70 @@ app.get('/api/products', function(req, res, next) {
   res.status(200).json(products);
 })
 
-//get categories
-app.get('/api/categories', function(req, res, next) {
-  res.status(200).json(categories)
+//get product
+app.get('/api/products/:name', function(req, res, next) {
+  console.log("got the request")
+  var product;
+  for (var i = 0; i < products.length; i++) {
+    if (req.params.name === products[i].name) {
+      var product = products[i];
+    }
+  }
+  res.status(200).json(product);
 })
 
-//get cart
-// app.get('/api/cart/:id', function(req, res, next) {
+//get categories
+app.get('/api/categories', function(req, res, next) {
+  res.status(200).json(categories);
+})
 
-// })
+//get category products
+app.get('/api/categories/:id', function(req, res, next) {
+  console.log(req.params.id)
+  var categoryProducts = [];
+  for (var i = 0; i < products.length; i++) {
+    if (products[i].category === req.params.id.toString()) {
+
+      categoryProducts.push(products[i])
+    }
+  }
+  res.status(200).json(categoryProducts);
+})
+
+// get cart
+app.get('/api/cart/:id', function(req, res, next) {
+  res.status(200).json(cart);
+})
+
+
+//post product
+app.post('/api/products', function(req, res, next) {
+  products.push(req.body);
+  res.status(200).json(products);
+})
+
+//post to cart
+app.post('/api/cart/', function(req, res, next) {
+  cart.push(req.body);
+  res.status(200).json(cart);
+})
+
+//post to wishlist
+app.post('/api/wishlist', function(req, res, next) {
+  wishlist.push(req.body);
+  console.log(wishlist)
+  res.status(200).json(wishlist);
+})
+
+// delete product ---fix
+app.delete('/api/products/:id', function(req, res, next) {
+
+})
 
 
 
-var port = 3000;
+
+var port = 8080;
 app.listen(port, function() {
   console.log('listening to port',port);
 })

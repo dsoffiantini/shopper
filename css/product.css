@@ -64,12 +64,17 @@
 
 /*---tabs---*/
 
+.tabs-container {
+  width: 90%;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.15);
+  margin: 0px auto;
+}
+
 .tabs {
-    width: 90%;
+    width: 100%;
     margin: 20px auto 0px auto;
     padding: 10px 10px;
     background: white;
-    box-shadow: 0 0 6px 0 rgba(0,0,0,.15);
 }
 .tabs ul {
     display: flex;
@@ -92,7 +97,7 @@
 }
 
 .tabs-below {
-  width: 90%;
+  width: 100%;
   margin: 0px auto 20px auto;
   padding: 0px 10px 10px 10px;
   background: white;

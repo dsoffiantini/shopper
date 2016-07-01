@@ -29,7 +29,7 @@
                 </div>
                 <a ui-sref="product({productID: product.name})">
                 <div class="product-title">{{product.name}}</div>
-                <div class="product-price">{{product.price}}</div>
+                <div class="product-price">{{product.price | currency}}</div>
         </a>
 
         </div>
@@ -54,7 +54,7 @@
                 </div>
                 <a ui-sref="product({productID: product.name})">
                 <div class="product-title">{{product.name}}</div>
-                <div class="product-price">{{product.price}}</div>
+                <div class="product-price">{{product.price | currency}}</div>
         </a>
 
         </div>
@@ -79,7 +79,7 @@
                 </div>
                 <a ui-sref="product({productID: product.name})">
                 <div class="product-title">{{product.name}}</div>
-                <div class="product-price">{{product.price}}</div>
+                <div class="product-price">{{product.price | currency}}</div>
         </a>
 
         </div>

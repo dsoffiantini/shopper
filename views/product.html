@@ -1,0 +1,146 @@
+<header class="breadcrumbs">
+    <a href="/#/">Home</a>
+    >
+    <a href="#/">{{productName}}</a>
+
+</header>
+<div class="product-added" ng-show="productAddedToggle">
+  <h6>You have successfully added <span>{{productName}}</span> to your cart</h6>
+  <button type="button" name="button" ng-click="productAddedToggle = !productAddedToggle">Continue Shopping</button>
+</div>
+<main class="product-page">
+    <div class="image-wrapper">
+        <div class="slider slider-for">
+            <div><img src="images\beach.jpg" alt=""/></div>
+            <div><img src="images\pupper.jpg" alt=""/></div>
+        </div>
+        <div class="slider slider-nav">
+            <div><img src="images\beach.jpg" alt=""/></div>
+            <div><img src="images\pupper.jpg" alt=""/></div>
+            <div><img src="images\beach.jpg" alt=""/></div>
+            <div><img src="images\pupper.jpg" alt=""/></div>
+            <div><img src="images\beach.jpg" alt=""/></div>
+            <div><img src="images\pupper.jpg" alt=""/></div>
+        </div>
+    </div>
+
+    <section class="main-product-info">
+        <h2>{{productName}}</h2>
+        <h3>{{product.price}}</h3>
+        <div class="status">
+            In Stock
+        </div>
+        <p>
+            {{product.description}}
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div class="buttons">
+            <button type="button" name="button" class=" product-button add-to-cart" ng-click="productAddedToggle = !productAddedToggle" ng-click="addToCart()"><img src="images\icons\shopping-cart.svg" alt="Add to Cart"/>Add To Cart</button>
+            <button type="button" name="button" class=" product-button" ng-click="addToWishlist()"><img src="images\icons\heart.svg" alt="Add to Wish List"/>Add To Wish List</button>
+            <button type="button" name="button" class=" product-button" ng-click = "addToCompare()"><img src="images\icons\copy.svg" alt="Compare"/>Add To Compare</button>
+        </div>
+    </section>
+
+</main>
+<section class="related-products">
+    <h2>Related Products</h2>
+    <content class="related-products-container">
+
+        <div class="products" ng-repeat="product in relatedProducts">
+
+            <div class="product-thumb">
+
+                <div class="product-thumb-img" style="background: url('{{product.image}}') center no-repeat; background-size: contain;"></div>
+
+                <div class="product-overlay">
+                  <button class="quick-view" ng-click="clickToOpen(product)">Quick View</button>
+                </div>
+
+            </div>
+            <a ui-sref="product({productID: product.name})">
+                <div class="product-title">{{product.name}}</div>
+                <div class="product-price">{{product.price}}</div>
+            </a>
+
+        </div>
+    </content>
+</section>
+<section class="tabs-container">
+  <div class="tabs">
+      <ul>
+          <li>
+              <a href="#description">Description</a>
+          </li>
+          <li>
+              <a href="#additional-info">Additional Info</a>
+          </li>
+          <li>
+              <a href="#shipping-info">Shipping Info</a>
+          </li>
+          <li>
+              <a href="#ratings">Ratings</a>
+          </li>
+          <li>
+              <a href="#tags">Tags</a>
+          </li>
+      </ul>
+  </div>
+  <div class="tabs-below">
+
+      <article id="description">
+          Description ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </article>
+      <article id="additional-info">
+          Additional Info ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </article>
+      <article id="shipping-info">
+          Shipping Info ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+          adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </article>
+      <article id="ratings">
+          <button type="button" name="add-review" ng-click="addReview = !addReview">Add a Review</button>
+          <div class="review-box" ng-show="addReview">
+              <h6>How would you rate
+                  {{product.name}}?</h6>
+              <div class="rating">
+                  <input class="star star-5" id="star-5-2" type="radio" name="star"/>
+                  <label class="star star-5" for="star-5-2"></label>
+                  <input class="star star-4" id="star-4-2" type="radio" name="star"/>
+                  <label class="star star-4" for="star-4-2"></label>
+                  <input class="star star-3" id="star-3-2" type="radio" name="star"/>
+                  <label class="star star-3" for="star-3-2"></label>
+                  <input class="star star-2" id="star-2-2" type="radio" name="star"/>
+                  <label class="star star-2" for="star-2-2"></label>
+                  <input class="star star-1" id="star-1-2" type="radio" name="star"/>
+                  <label class="star star-1" for="star-1-2"></label>
+              </div>
+              <input type="text" name="name" value="">
+              <button type="button" name="submit-review">Submit Review</button>
+          </div>
+      </article>
+      <article class="tags" id="tags">
+          <div class="tags-list" ng-repeat="tag in tags track by $index">
+              {{tag}}
+          </div>
+          <div class="tag-input">
+              <input type="text-field" name="name" placeholder="Enter Tag" ng-model="tagInput">
+              <button type="button" name="button" ng-click="addTag(tagInput)">Add Tag</button>
+          </div>
+      </article>
+    </div>
+</section>
+
+
+
+<script src="./scripts/jquery.js" charset="utf-8"></script>
+<script src="./scripts/product-jQuery.js" charset="utf-8"></script>
+<script src="./slick/slick.js" charset="utf-8"></script>

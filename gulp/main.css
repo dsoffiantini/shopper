@@ -107,9 +107,10 @@ body {
   flex-direction: column;
   position: absolute;
   top: 56px;
-  left: -130px;
+  right: 0;
   background: white;
-  white-space: nowrap; }
+  white-space: nowrap;
+  padding: 0px 10px; }
 
 /*---Homepage Products---*/
 .featured-products,

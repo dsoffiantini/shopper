@@ -29,7 +29,8 @@ $(document).ready(function() {
     $(".products-container").slick({
         slidesToShow: 3,
         slidesToScroll: 3,
-        dots: true,
+        dots: false,
+        arrows: true,
         prevArrow: '.btn-prev',
         nextArrow: '.btn-next',
         autoplay: true
@@ -38,7 +39,7 @@ $(document).ready(function() {
     $(".products-container-2").slick({
         slidesToShow: 5,
         slidesToScroll: 1,
-        dots: true,
+        dots: false,
         prevArrow: '.btn-prev',
         nextArrow: '.btn-next',
         autoplay: true
@@ -47,7 +48,7 @@ $(document).ready(function() {
     $(".products-container-3").slick({
         slidesToShow: 5,
         slidesToScroll: 1,
-        dots: true,
+        dots: false,
         prevArrow: '.btn-prev',
         nextArrow: '.btn-next',
         autoplay: true

@@ -14,7 +14,7 @@
                 <li>
                     <h3>Sort By</h3>
                     <select ng-model="sortBy">
-                        <option value="pricedown" selected="selected">Price desc.</option>
+                        <option value="pricedown" selected="selected" value="product.price">Price desc.</option>
                         <option value="priceup">Price asc.</option>
                         <option value="namedown">Name desc.</option>
                         <option value="nameup">Name asc.</option>
@@ -30,7 +30,7 @@
         </div>
     </aside>
     <div class="category-product-container">
-        <div class="category-product" dir-paginate="product in categoryProducts | itemsPerPage: 4">
+        <div class="category-product" dir-paginate="product in categoryProducts | orderBy:'price':true | itemsPerPage: 4" >
             <div class="category-product-image-container">
                 <div class="category-product-image" style="background: url('{{product.image}}') center no-repeat; background-size: contain;">
 
@@ -39,7 +39,7 @@
             <div class="category-product-info">
                 <a ui-sref="product({productID: product.name})">
                     <h2>{{product.name}}</h2>
-                    <h3>{{product.price}}</h3>
+                    <h3>{{product.price | currency}}</h3>
                 </a>
             </div>
 
