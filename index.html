@@ -22,7 +22,7 @@
         <ul >
             <li><a ui-sref="home">Home</a></li>
             <li ng-repeat="category in categories"><a ui-sref="category({category: category.name})">{{category.name}}</a>
-                <ul class="category-dropdown" >
+                <ul class="category-dropdown">
                     <li ng-repeat="subcategory in category.subcategories">{{subcategory}}</li>
 
                 </ul>
@@ -33,7 +33,7 @@
 
             </ul>
             <ul class="cart">
-              <li><img src="images\icons\shopping-cart.svg" alt="Cart" />
+              <li><a ui-sref="cart"><img src="images\icons\shopping-cart.svg" alt="Cart" /></a>
                   <ol class="cart-content">
                     <li>Your Cart is Empty</li>
                     <li>Product1</li>
