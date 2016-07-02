@@ -2,7 +2,7 @@ angular.module('shopper').controller('productController', function($scope, $stat
 
     $scope.url = $state.href($state.current.name);
 
-    $scope.productName = $stateParams.productID;
+    console.log($stateParams.productID);
 
 
     productService.getProduct($stateParams.productID).then(function(product) {
