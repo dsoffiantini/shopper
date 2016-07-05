@@ -1,9 +1,12 @@
 angular.module("shopper").service("cartService", function($http, $q) {
 
-  this.addToCart = function() {
+  var userID = 123;
+
+  this.addToCart = function(product) {
     return $http({
-      method: 'POST',
-      url: '//localhost:8080/api/cart'
+      method: 'PUT',
+      url: '//localhost:8080/api/cart/' + userID,
+      body: product
     })
   }
 

@@ -4,39 +4,36 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var express = require('express');
 var mongoose = require('mongoose');
-// var FacebookStrategy = require('passport-facebook').Strategy;
-// var passport = require('passport');
-
-//controllers
-
-// var cart = require('./serverControllers/cartCtrl');
-// var orders = require('./serverControllers/orderCtrl');
-// var users = require('./serverControllers/userCtrl');
+var session = require('express-session');
+var FacebookStrategy = require('passport-facebook').Strategy;
+var passport = require('passport');
 
 //models
 
 var Product = require('./models/products.model');
-var Category = require('./models/categories.model')
-
-//express setup
-
-var app = express();
-app.use(bodyParser.json());
-// app.use(express.static('public'));
-app.use(cors());
+var Cart = require('./models/cart.model');
+var Category = require('./models/categories.model');
+var User = require('./models/user.model')
 
 //mongoose setup
 
 mongoose.connect("mongodb://localhost/shopper");
 
-var cart = [{
-  name: "product",
-  quantity: 12
-},
-{
-  name: "product2",
-  quantity: 5
-}]
+//express setup
+
+var app = express();
+app.use(session({
+  secret: '12345'
+}));
+app.use(bodyParser.json());
+// app.use(express.static('public'));
+app.use(cors());
+
+
+//get session
+app.get('/api/session', function(req, res, next) {
+  res.status(200).json(req.sessionID)
+})
 
 //get products
 app.get('/api/products', function(req, res, next) {
@@ -49,7 +46,7 @@ app.get('/api/products', function(req, res, next) {
   })
 })
 
-// //get product
+//get product
 
 app.get('/api/products/:id', function(req, res, next) {
   Product.findById(req.params.id, function(err, product) {
@@ -78,7 +75,6 @@ app.get('/api/categories', function(req, res, next) {
 //get category products
 app.get('/api/categories/:id', function(req, res, next) {
   Product.find({category: req.params.id}, function(err, category) {
-    console.log(req.body)
     if(err) {
       console.log("ERROR")
     } else {
@@ -89,32 +85,45 @@ app.get('/api/categories/:id', function(req, res, next) {
 
 // get cart
 app.get('/api/cart', function(req, res, next) {
-  res.status(200).json(cart);
+  res.status(200).json(cart)
 })
 
 
 //post product
-app.post('/api/products', function(req, res, next) {
-  products.push(req.body);
-  res.status(200).json(products);
-})
+// app.post('/api/products', function(req, res, next) {
+//   Product.create(function, err, products) {
+//     var newProduct = new Product(req.body);
+//     newProduct.save()
+//   }
+// })
 
 //post to cart
-app.post('/api/cart/', function(req, res, next) {
-  cart.push(req.body);
-  res.status(200).json(cart);
+app.post('/api/cart/:id', function(req, res, next) {
+  Cart.create(req.body, function (err, cart) {
+    if(err) {
+      console.log("ERROR")
+    } else {
+      res.status(200).json(cart)
+    }
+  })
 })
 
 //post to wishlist
-app.post('/api/wishlist', function(req, res, next) {
+app.post('/api/wishlist/:id', function(req, res, next) {
   wishlist.push(req.body);
   console.log(wishlist)
   res.status(200).json(wishlist);
 })
 
-// delete product ---fix
+// delete product
 app.delete('/api/products/:id', function(req, res, next) {
-
+  Product.findByIdAndRemove(req.params.id, function (err, products) {
+    if(err) {
+      console.log("ERROR")
+    } else {
+      res.status(200).json(products)
+    }
+  })
 })
 
 

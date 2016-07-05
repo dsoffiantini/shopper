@@ -105,12 +105,23 @@ body {
 .cart-content {
   display: flex;
   flex-direction: column;
+  flex: 1;
   position: absolute;
   top: 56px;
   right: 0;
   background: white;
   white-space: nowrap;
   padding: 0px 10px; }
+
+.cart-content li {
+  display: flex;
+  justify-content: space-between; }
+
+.cart-content li button {
+  margin-left: 5px;
+  background: red;
+  color: white;
+  border: none; }
 
 /*---Homepage Products---*/
 .featured-products,

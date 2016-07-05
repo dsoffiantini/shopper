@@ -5,7 +5,7 @@
         <button type="button" name="button" class="list-button">Filter</button>
         <button type="button" name="button" class="list-button">Filter</button>
     </div>
-    <div class="category-listing-total">Items # to # of # total</div>
+    <!-- <div class="category-listing-total">Items # to # of # total</div> -->
 </div>
 <main class="main-category-container">
     <aside class="filter-products" ng-show="filterToggle">
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="category-product-info">
-                <a ui-sref="product({productID: product.name})">
+                <a ui-sref="product({productID: product._id})">
                     <h2>{{product.name}}</h2>
                     <h3>{{product.price | currency}}</h3>
                 </a>

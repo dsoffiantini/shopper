@@ -9,7 +9,9 @@ angular.module("shopper").controller("adminController", function($scope, product
 
   $scope.getProducts();
 
-  // $scope.deleteProduct = adminService.deleteProduct();
+  $scope.deleteProduct = function(product) {
+    productService.deleteProduct(product);
+  }
 
 
 })

@@ -35,10 +35,7 @@
             <ul class="cart">
               <li><a ui-sref="cart"><img src="images\icons\shopping-cart.svg" alt="Cart" /></a>
                   <ol class="cart-content">
-                    <li>Your Cart is Empty</li>
-                    <li>Product1</li>
-                    <li>Product2</li>
-                    <li>Product3</li>
+                    <li ng-repeat="item in cart">{{item.name}}<button type="button" name="delete" ng-click="deleteProduct()">X</button></li>
                   </ol>
               </li>
 

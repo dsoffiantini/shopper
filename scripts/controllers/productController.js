@@ -2,44 +2,17 @@ angular.module('shopper').controller('productController', function($scope, $stat
 
     $scope.url = $state.href($state.current.name);
 
-    console.log($stateParams.productID);
-
-
     productService.getProduct($stateParams.productID).then(function(product) {
       $scope.product = product;
       productService.getCategoryProducts(product.category).then(function(categoryProducts) {
           $scope.relatedProducts = categoryProducts;
         })
+      $scope.addToCart = function() {
+        cartService.addToCart($scope.product)
+      }
     })
 
 
-
-
-
-
-    // $scope.getProducts = function() {
-    //     productService.getProducts().then(function(products) {
-    //       for (var i = 0; i < products.length; i++) {
-    //           if (products[i].name === $scope.productName) {
-    //               $scope.product = $scope.products[i];
-    //           }
-    //       }
-    //     });
-    // }
-    //
-    // $scope.getProducts();
-
-
-    // $scope.productGrab = function getProducts() {
-    //
-    //     for (var i = 0; i < $scope.products.length; i++) {
-    //         if ($scope.products[i].name === $scope.productName) {
-    //             $scope.product = $scope.products[i];
-    //         }
-    //     }
-    // }
-    //
-    // $scope.productGrab();
 
     $scope.tags = [];
 

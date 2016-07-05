@@ -1,4 +1,4 @@
-angular.module("shopper").controller("indexController", function($scope, productService) {
+angular.module("shopper").controller("indexController", function($scope, productService, cartService) {
 
   // $scope.categories = productService.getCategories();
 
@@ -8,6 +8,15 @@ angular.module("shopper").controller("indexController", function($scope, product
     });
   }
   $scope.getCategories();
+
+  cartService.getCart().then(function(cart) {
+    if (cart.length === 0) {
+      $scope.cart = "Your cart is empty"
+    }
+    else {
+      $scope.cart = cart;
+    }
+  });
 
 
 

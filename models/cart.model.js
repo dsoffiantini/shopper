@@ -6,12 +6,12 @@ var cartSchema = new Schema({
     name: {
       type: String,
       ref: "Product"
-    }
+    },
     quantity: {
       type: Number,
       min: 1
-    }]
-  }
+    }
+  }]
 });
 
 module.exports = mongoose.model('Cart', cartSchema);

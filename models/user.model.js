@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
-  name: String,
+  id: Number,
   cart: {
     type: String,
     ref: "Cart"

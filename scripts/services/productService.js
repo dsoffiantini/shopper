@@ -42,14 +42,13 @@ angular.module("shopper").service("productService", function($http, $q) {
     }, function(err) {
       console.log(err);
     })
+  }
 
-    // var categoryProducts = [];
-    // for (var i = 0; i < products.length; i++) {
-    //   if (products[i].category === category) {
-    //     categoryProducts.push(products[i])
-    //   }
-    // }
-  //   return categoryProducts;
+  this.deleteProduct = function(productID) {
+    return $http({
+      method: 'DELETE',
+      url: '//localhost:8080/api/products/' + productID
+    })
   }
 
 });

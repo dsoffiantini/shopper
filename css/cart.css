@@ -1,23 +1,35 @@
-.empty-cart {
+.cart-cart {
   width: 80%;
   height: 65vh;
   margin: 0px auto;
   text-align: center;
+  background: white;
 }
 
-.empty-cart content {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.cart-cart content {
+  display: flex;
+  flex-direction: column;
 }
 
-.empty-cart h3 {
+.cart-cart h3 {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.empty-cart p {
+.cart-cart p {
   margin: 10px auto;
+}
+
+.cart-cart ul {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 20px auto;
+}
+
+.cart-cart button {
+  background: red;
+  color: white;
+  border: none;
 }
