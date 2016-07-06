@@ -63,9 +63,9 @@ button {
 }
 
 .category-product-image-container {
-  width: 13vw;
-  height: 18vw;
-  padding: 5px;
+  width: 300px;
+  height: 400px;
+  padding: 10px 5px;
 }
 
 .category-product-image {

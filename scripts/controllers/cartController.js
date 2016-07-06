@@ -1,15 +1,14 @@
-angular.module("shopper").controller("cartController", function($scope, cartService) {
+angular.module("shopper").controller("cartController", function($scope, cartService, userService) {
 
-  $scope.test = "test"
+  $scope.getSession = function() {
+    userService.getSession().then(function(session) {
+      $scope.session = session;
+      cartService.getCart(session).then(function(cart) {
+        $scope.cart = cart;
+      })
+    })
+  }
 
-  cartService.getCart().then(function(cart) {
-    $scope.cart = cart;
-    // if (cart.length === 0) {
-    //   $('.cart').append(<h3>Your Cart is Empty :(</h3>
-    //     You have no items in your Shopping Cart. Bummer.
-    //     <br>
-    //     Click <a href="/#/">here</a> to continue shopping.)
-    // }
-  })
+
 
 })

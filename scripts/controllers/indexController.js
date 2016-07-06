@@ -1,4 +1,4 @@
-angular.module("shopper").controller("indexController", function($scope, productService, cartService) {
+angular.module("shopper").controller("indexController", function($scope, newsletterService, productService, cartService) {
 
   // $scope.categories = productService.getCategories();
 
@@ -17,6 +17,10 @@ angular.module("shopper").controller("indexController", function($scope, product
       $scope.cart = cart;
     }
   });
+
+  $scope.submitEmail = function(email) {
+    newsletterService.newsletterSignup(email);
+  }
 
 
 

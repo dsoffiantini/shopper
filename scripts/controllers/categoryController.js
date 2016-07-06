@@ -1,8 +1,11 @@
 angular.module("shopper").controller("categoryController", function($scope, $state, $stateParams, productService) {
 
+  $scope.category = $stateParams.category;
+
     $scope.getCategoryProducts = function() {
       productService.getCategoryProducts($stateParams.category).then(function(categoryProducts) {
         $scope.categoryProducts = categoryProducts.reverse();
+        $scope.length = categoryProducts.length;
       })
     }
 

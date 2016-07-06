@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+    var windowHeight = $(window).height();
+    var navHeight = $('.top-nav').height();
+    var slideshowHeight = windowHeight - navHeight;
+
+    $('.slideshow').css("height", slideshowHeight)
 
     jQuery.fn.center = function() {
         this.css("position", "absolute");
@@ -144,10 +149,6 @@ $(document).ready(function() {
         $('.curtain').hide();
     });
 
-    // $('.modal').center();
-
-
-
     // ---Back to Top---
     var amountScrolled = 300;
 
@@ -172,5 +173,27 @@ $(document).ready(function() {
         }, 700);
         return false;
     });
+
+
+    //list + grid buttons
+
+    $('.category-product-description').hide();
+    $('.category-product-buttons').hide();
+
+    $('.list-button').click(function() {
+      $('.category-product-description').show();
+      $('.category-product-buttons').show();
+      $('.category-product').css("flex-direction", "row");
+      $('.category-product').css("width", "auto")
+
+    })
+
+    $('.grid-button').click(function() {
+      $('.category-product-description').hide();
+      $('.category-product-buttons').hide();
+      $('.category-product').css("flex-direction", "column")
+      $('.category-product').css("justify-content", "space-around")
+
+    })
 
 });

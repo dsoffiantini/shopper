@@ -1,15 +1,15 @@
 body {
-  background: #f9f5f2; }
+  background: #e6e6e6; }
 
 .slideshow,
 .slideshow:after {
   position: absolute;
   width: 100%;
-  height: 100vh;
   top: 0;
   z-index: 0; }
 
 .slideshow:after {
+  height: 100%;
   content: '';
   background: url("../images/pattern.png") repeat top left; }
 
@@ -246,6 +246,26 @@ a.back-to-top {
   background: rgba(0, 0, 0, 0.7) url("../images/icons/up-arrow.svg") no-repeat center;
   background-size: 60%;
   border-radius: 5px; }
+
+.newsletter {
+  background: white;
+  width: 90%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px; }
+
+.newsletter-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.newsletter-content h3 {
+  font-size: 20px;
+  font-weight: bold; }
+
+.submit-email {
+  margin-top: 10px; }
 
 .footer {
   width: 100%;

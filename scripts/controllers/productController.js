@@ -12,7 +12,7 @@ angular.module('shopper').controller('productController', function($scope, $stat
       }
     })
 
-
+    
 
     $scope.tags = [];
 

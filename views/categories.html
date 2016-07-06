@@ -1,11 +1,11 @@
 <div class="above-category">
-    <div class="category-name">Category</div>
+    <div class="category-name">{{category}}</div>
     <div class="category-buttons">
         <button type="button" name="button" class="filter-button" ng-click="filterToggle = !filterToggle">Filter</button>
-        <button type="button" name="button" class="list-button">Filter</button>
-        <button type="button" name="button" class="list-button">Filter</button>
+        <button type="button" name="button" class="grid-button">Grid</button>
+        <button type="button" name="button" class="list-button">List</button>
     </div>
-    <!-- <div class="category-listing-total">Items # to # of # total</div> -->
+    <div class="category-listing-total">{{length}} Products Total</div>
 </div>
 <main class="main-category-container">
     <aside class="filter-products" ng-show="filterToggle">
@@ -32,7 +32,7 @@
     <div class="category-product-container">
         <div class="category-product" dir-paginate="product in categoryProducts | orderBy:'price':true | itemsPerPage: 4" >
             <div class="category-product-image-container">
-                <div class="category-product-image" style="background: url('{{product.image}}') center no-repeat; background-size: contain;">
+                <div class="category-product-image" style="background: url('{{product.image}}') center no-repeat; background-size: cover;">
 
                 </div>
             </div>
@@ -41,6 +41,14 @@
                     <h2>{{product.name}}</h2>
                     <h3>{{product.price | currency}}</h3>
                 </a>
+                <div class="category-product-description">
+                    {{product.description}}
+                </div>
+            </div>
+            <div class="category-product-buttons">
+                <button type="button" name="button" class=" product-button add-to-cart" ng-click="productAddedToggle = !productAddedToggle" ng-click="addToCart()"><img src="images\icons\shopping-cart.svg" alt="Add to Cart"/>Add To Cart</button>
+                <button type="button" name="button" class=" product-button" ng-click="addToWishlist()"><img src="images\icons\heart.svg" alt="Add to Wish List"/>Add To Wish List</button>
+                <button type="button" name="button" class=" product-button" ng-click = "addToCompare()"><img src="images\icons\copy.svg" alt="Compare"/>Add To Compare</button>
             </div>
 
         </div>
@@ -48,4 +56,5 @@
 </main>
 <dir-pagination-controls></dir-pagination-controls>
 <script src="./scripts/category.js" charset="utf-8"></script>
+<script src="./scripts/jquery.js" charset="utf-8"></script>
 <script src="./node_modules/angular-utils-pagination/dirPagination.js" charset="utf-8"></script>

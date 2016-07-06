@@ -1,4 +1,4 @@
-angular.module("shopper").controller("adminController", function($scope, productService) {
+angular.module("shopper").controller("adminController", function($scope, productService, newsletterService) {
 
 
   $scope.getProducts = function() {
@@ -12,6 +12,15 @@ angular.module("shopper").controller("adminController", function($scope, product
   $scope.deleteProduct = function(product) {
     productService.deleteProduct(product);
   }
+
+  $scope.getEmails = function() {
+      newsletterService.getSubscribers().then(function(emails) {
+          $scope.emails = emails;
+          console.log(emails)
+      });
+  }
+
+  $scope.getEmails();
 
 
 })

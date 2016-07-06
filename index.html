@@ -49,6 +49,14 @@
     <ui-view>
     </ui-view>
     <a href="#" class="back-to-top">Back to Top</a>
+    <section class="newsletter">
+      <div class="newsletter-content">
+        <h3>Enter Your Email Below to Receive Exclusive Offers!</h3>
+        <div class="submit-email">
+          <input type="textfield" class="newsletter-submit" name="name" placeholder="Enter Your Email" ng-model="email"><button type="button" name="button" ng-click='submitEmail(email)'>Submit</button>
+        </div>
+        </div>
+    </section>
     <footer class="footer">
         <ul>
             <li>Company</li>
@@ -117,6 +125,8 @@
     <script src="./scripts/services/brandService.js" charset="utf-8"></script>
     <script src="./scripts/services/productService.js" charset="utf-8"></script>
     <script src="./scripts/services/cartService.js" charset="utf-8"></script>
+    <script src="./scripts/services/userService.js" charset="utf-8"></script>
+    <script src="./scripts/services/newsletterService.js" charset="utf-8"></script>
     <script src="./scripts/services/wishlistService.js" charset="utf-8"></script>
     <script src="./node_modules/angular-utils-pagination/dirPagination.js" charset="utf-8"></script>
     <script src="./node_modules/ng-dialog/js/ngDialog.js" charset="utf-8"></script>

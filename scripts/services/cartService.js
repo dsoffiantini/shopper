@@ -10,10 +10,10 @@ angular.module("shopper").service("cartService", function($http, $q) {
     })
   }
 
-  this.getCart = function() {
+  this.getCart = function(session) {
     return $http({
       method: 'GET',
-      url: '//localhost:8080/api/cart'
+      url: '//localhost:8080/api/cart/' + session
     }).then(function(cart) {
       return cart.data;
     })

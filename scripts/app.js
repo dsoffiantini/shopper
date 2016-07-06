@@ -42,6 +42,11 @@ angular.module("shopper", ['ui.router', 'angularUtils.directives.dirPagination',
                 templateUrl: './views/delete-product.html',
                 controller: 'adminController'
             })
+            .state('admin.subscribers', {
+                url: '/subscribers',
+                templateUrl: './views/subscribers.html',
+                controller: 'adminController'
+            })
             .state('wishlist', {
                 url: '/wishlist',
                 templateUrl: './views/wishlist.html',
