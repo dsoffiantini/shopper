@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$('.load-jQuery').click(function() {
 
     //centering function
 
@@ -14,58 +14,66 @@ $(document).ready(function() {
     $('.product-added').center();
 
     //hides
-      $('.product-overlay').hide();
-
+      $('.zoom-overlay').hide();
 
     //quick view
 
-    $('.products').hover(function() {
-        $(this).css('box-shadow', '0px 0px 4px 4px rgba(0,0,0,.15)');
-        $(this).find('.product-overlay').show();
+    $('.main-product-image-image').hover(function() {
+        $(this).find('.zoom-overlay').show();
     }, function() {
-        $('.products').css('box-shadow', '0px 0px 6px 0px rgba(0,0,0,.15)');
-        $('.product-overlay').hide();
+        $('.zoom-overlay').hide();
     });
-
-    $('.quick-view').hover(function() {
-        $(this).css({
-            'background': 'rgba(255,255,255,.8)',
-            'color': 'black'
-        })
-    }, function() {
-        $(this).css({
-            'background': 'rgba(0,0,0,0)',
-            'color': 'white'
-        })
-    })
 
     //sliders
 
-    $('.slider-for').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav'
-    });
-    $('.slider-nav').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        asNavFor: '.slider-for',
-        arrows: true,
-        centerMode: true,
-        focusOnSelect: true
-    });
 
-    $(".related-products-container").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: true,
-        prevArrow: '.btn-prev',
-        nextArrow: '.btn-next',
-        autoplay: true
-    });
+      $('.slider-for').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          fade: true,
+          asNavFor: '.slider-nav'
+      });
+      $('.slider-nav').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          asNavFor: '.slider-for',
+          arrows: true,
+          centerMode: true,
+          focusOnSelect: true
+      });
+      $(".related-products-container").slick({
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          dots: false,
+          arrows: true,
+          prevArrow: '.btn-prev',
+          nextArrow: '.btn-next',
+          autoplay: true,
+          responsive: [{
+              breakpoint: 1024,
+              settings: {
+                  dots: false,
+                  arrows: false,
+                  infinite: true,
+                  slidesToShow: 3,
+                  slidesToScroll: 1
+              }
+          },
+          {
+              breakpoint: 768,
+              settings: {
+                  dots: false,
+                  arrows: false,
+                  infinite: true,
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+              }
+          }]
+      });
+
+
+
 
     $('.tabs ul').each(function() {
 
@@ -93,6 +101,74 @@ $(document).ready(function() {
 
             e.preventDefault();
         });
+    });
+
+    //quantity
+
+    $('.qtyplus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)) {
+            // Increment
+            $('input[name='+fieldName+']').val(currentVal + 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+    // This button will decrement the value till 0
+    $(".qtyminus").click(function(e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            $('input[name='+fieldName+']').val(currentVal - 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+
+
+
+    $(".product-zoom-image-container").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        prevArrow: '.btn-prev',
+        nextArrow: '.btn-next',
+        autoplay: true,
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                dots: false,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                dots: false,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
     });
 
 });

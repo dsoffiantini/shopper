@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/cart.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./css/admin.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./css/wishlist.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="./css/search-results.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./slick/slick.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./slick/slick-theme.css" media="screen" charset="utf-8">
     <link rel="stylesheet" href="./node_modules\ng-dialog\css\ngDialog.css" media="screen" title="no title" charset="utf-8">
@@ -29,13 +30,13 @@
             </li>
         </ul>
             <ul>
-              <li class="searchbox"><input type="text" name="search" placeholder="Search the Store..."><img src="images\icons\magnifying-glass.svg" alt="Search Button" /></li>
+              <li class="searchbox"><input type="text" name="search" placeholder="Search the Store..." ng-model="searchText"><img src="images\icons\magnifying-glass.svg" alt="Search Button" ng-click="search(searchText)" ui-sref="searchResults({query: searchText})"/></li>
 
             </ul>
             <ul class="cart">
               <li><a ui-sref="cart"><img src="images\icons\shopping-cart.svg" alt="Cart" /></a>
                   <ol class="cart-content">
-                    <li ng-repeat="item in cart">{{item.name}}<button type="button" name="delete" ng-click="deleteProduct()">X</button></li>
+                    <li ng-repeat="item in cart.items">{{item.name}}<button type="button" name="delete" ng-click="deleteProduct()">X</button></li>
                   </ol>
               </li>
 
@@ -48,6 +49,7 @@
 
     <ui-view>
     </ui-view>
+
     <a href="#" class="back-to-top">Back to Top</a>
     <section class="newsletter">
       <div class="newsletter-content">

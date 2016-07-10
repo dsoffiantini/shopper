@@ -51,4 +51,15 @@ angular.module("shopper").service("productService", function($http, $q) {
     })
   }
 
+  this.searchProducts = function(query) {
+    return $http({
+      method: 'GET',
+      url: '//localhost:8080/api/products/search/' + query
+    }).then(function(response) {
+      return response.data
+    }, function(err) {
+      console.log(err)
+    })
+  }
+
 });

@@ -10,7 +10,6 @@ angular.module("shopper").service("newsletterService", function($http, $q) {
   }
 
   this.newsletterSignup = function(email) {
-
     return $http({
       method: 'POST',
       url: '//localhost:8080/api/newsletter',

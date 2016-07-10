@@ -1,9 +1,9 @@
 <div class="above-category">
     <div class="category-name">{{category}}</div>
     <div class="category-buttons">
-        <button type="button" name="button" class="filter-button" ng-click="filterToggle = !filterToggle">Filter</button>
-        <button type="button" name="button" class="grid-button">Grid</button>
-        <button type="button" name="button" class="list-button">List</button>
+        <button type="button" name="button" class="category-button filter-button" ng-click="filterToggle = !filterToggle">Filter</button>
+        <button type="button" name="button" class="category-button grid-button">Grid</button>
+        <button type="button" name="button" class="category-button list-button">List</button>
     </div>
     <div class="category-listing-total">{{length}} Products Total</div>
 </div>
@@ -14,15 +14,13 @@
                 <li>
                     <h3>Sort By</h3>
                     <select ng-model="sortBy">
-                        <option value="pricedown" selected="selected" value="product.price">Price desc.</option>
-                        <option value="priceup">Price asc.</option>
-                        <option value="namedown">Name desc.</option>
-                        <option value="nameup">Name asc.</option>
+                        <option value="name" selected="selected">Name</option>
+                        <option value="price">Price</option>
                     </select>
                 </li>
-                <li>
-                    <h3>Price</h3> {{minPrice | currency}}
-                    <input type="range" name="price" min="{{minPrice}}" max="{{maxPrice}}" ng-model="priceFilter">{{maxPrice | currency}}
+                <li class="maxPrice">
+                    <h3>Max Price</h3>
+                    {{minPrice | currency}}<input type="range" name="price" min="{{minPrice}}" max="{{maxPrice}}" value="{{maxPrice}}" ng-model="priceFilter">{{maxPrice | currency}}
                 </li>
               </ul>
 
@@ -30,10 +28,9 @@
         </div>
     </aside>
     <div class="category-product-container">
-        <div class="category-product" dir-paginate="product in categoryProducts | orderBy:'price':true | itemsPerPage: 4" >
+        <div class="category-product" dir-paginate="product in categoryProducts | filter: priceFilter | orderBy: sortBy | itemsPerPage: 4" >
             <div class="category-product-image-container">
                 <div class="category-product-image" style="background: url('{{product.image}}') center no-repeat; background-size: cover;">
-
                 </div>
             </div>
             <div class="category-product-info">

@@ -2,9 +2,12 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var cartSchema = new Schema({
-  customer: String,
+  customer: {
+    type: String,
+    unique: true
+  },
   items: [{
-    name: {
+    product: {
       type: String,
       ref: "Product"
     },

@@ -2,12 +2,12 @@
 
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var cookieParser = require('cookie-parser');
 var express = require('express');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('express-session');
-
 
 //models
 
@@ -15,7 +15,6 @@ var Product = require('./models/products.model');
 var Cart = require('./models/cart.model');
 var Category = require('./models/categories.model');
 var Newsletter = require('./models/newsletter.model');
-
 
 //secret
 var Secret = require('./secrets/secret');
@@ -27,9 +26,12 @@ mongoose.connect("mongodb://localhost/shopper");
 //express setup
 
 var app = express();
+app.use(cookieParser());
 app.use(session({
   secret: Secret,
-  resave: false
+  resave: true,
+  saveUninitialized: true,
+  cookie: {expires: new Date(253402300000000)}
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,15 +39,46 @@ app.use(bodyParser.json());
 // app.use(express.static('public'));
 app.use(cors());
 
-//create cart
-Cart.create(function (err, cart) {
-  var newCart = new Cart(session.id);
-  newCart.save();
+
+app.get('/api/session', function(req, res, next) {
+  Cart.find({customer: req.sessionID}, function(err, cart) {
+    res.status(200).json(cart);
+  })
 })
 
-//get session
-app.get('/api/session', function(req, res, next) {
-  res.status(200).json(req.session.id);
+//create cart
+app.post('/api/session', function(req, res, next) {
+  Cart.create(function (err, cart) {
+    var newCart = new Cart({customer: req.sessionID});
+    console.log(req.body);
+    newCart.save(function(err, s) {
+      if(err) {
+          console.log(err)
+      } else {
+        res.status(200).json(s);
+      }
+    })
+  })
+})
+
+// get cart
+app.get('/api/cart/:id', function(req, res, next) {
+  Cart.findById(req.params.id, function(err, cart) {
+    if(err) {
+      console.log(err)
+    } else {
+      res.status(200).json(cart)
+    }
+  })
+})
+
+//post to cart
+app.post('/api/cart/:id', function(req, res, next) {
+  Cart.findById(req.params.id, function(err, cart) {
+    cart.items.push(req.body);
+    cart.save();
+    res.status(200).send(cart);
+  })
 })
 
 //get products
@@ -71,7 +104,16 @@ app.get('/api/products/:id', function(req, res, next) {
   })
 })
 
-
+//search products
+app.get('/api/products/search/:query', function(req, res, next) {
+  Product.find({"name": { "$regex": req.params.query, "$options": "i" }}, function(err, products){
+    if(err) {
+      console.log("ERROR")
+    } else {
+      res.status(200).json(products)
+    }
+  })
+})
 
 //get categories
 app.get('/api/categories', function(req, res, next) {
@@ -95,18 +137,6 @@ app.get('/api/categories/:id', function(req, res, next) {
   })
 })
 
-// get cart
-app.get('/api/cart/:id', function(req, res, next) {
-  Cart.findById(req.params.id, function(err, cart) {
-    if(err) {
-      console.log(err)
-    } else {
-      res.status(200).json(cart)
-    }
-  })
-})
-
-
 // post product
 app.post('/api/products', function(req, res, next) {
   Product.create(function (err, products) {
@@ -118,17 +148,6 @@ app.post('/api/products', function(req, res, next) {
         res.status(200).json(s);
       }
     })
-  })
-})
-
-//post to cart
-app.post('/api/cart/:id', function(req, res, next) {
-  Cart.create(req.body, function (err, cart) {
-    if(err) {
-      console.log("ERROR")
-    } else {
-      res.status(200).json(cart)
-    }
   })
 })
 

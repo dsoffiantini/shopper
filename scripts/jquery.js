@@ -20,7 +20,7 @@ $(document).ready(function() {
         dots: true,
         arrows: false,
         responsive: [{
-            breakpoint: 500,
+            breakpoint: 768,
             settings: {
                 dots: false,
                 arrows: false,
@@ -38,7 +38,27 @@ $(document).ready(function() {
         arrows: true,
         prevArrow: '.btn-prev',
         nextArrow: '.btn-next',
-        autoplay: true
+        autoplay: true,
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                dots: false,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                dots: false,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
     });
 
     $(".products-container-2").slick({
@@ -47,7 +67,27 @@ $(document).ready(function() {
         dots: false,
         prevArrow: '.btn-prev',
         nextArrow: '.btn-next',
-        autoplay: true
+        autoplay: true,
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                dots: false,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                dots: false,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }]
     });
 
     $(".products-container-3").slick({
@@ -56,7 +96,27 @@ $(document).ready(function() {
         dots: false,
         prevArrow: '.btn-prev',
         nextArrow: '.btn-next',
-        autoplay: true
+        autoplay: true,
+        responsive: [{
+            breakpoint: 1024,
+            settings: {
+                dots: false,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                dots: false,
+                arrows: false,
+                infinite: true,
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }]
     });
 
 
@@ -67,7 +127,6 @@ $(document).ready(function() {
     //         prevArrow: '.btn-prev',
     //         nextArrow: '.btn-next'
     // });
-
 
     // ---Hides---
 
@@ -90,6 +149,22 @@ $(document).ready(function() {
         $('.cart-content').hide();
     });
 
+    var count = $(".cart-content").children().length;
+
+    // if(count === 0) {
+    //   $(".cart-content").append("<li>Your Cart is Empty</li>");
+    // }
+    // console.log(count)
+    //
+    // var cartCount = $(".cart-items").children().length;
+    //
+    // if(cartCount === 0) {
+    //   $('.cart-cart').append("<content class="empty-cart"><h3>Your Cart is Empty :(</h3>You have no items in your Shopping Cart. Bummer.<br>Click <a href="/#/">here</a> to continue shopping.</content>");
+    // }
+    //
+    // console.log(cartCount)
+
+
     $(window).bind('scroll', function() {
         if ($(window).scrollTop() > 50) {
             $('.top-nav').css('position', 'fixed');
@@ -97,14 +172,6 @@ $(document).ready(function() {
             $('.top-nav').css('position', 'relative');
         }
     });
-
-    // var cartwidth = $('.cart-content').width();
-    //
-    //
-    // $('.cart-content').css("left", -cartwidth);
-
-
-
 
     $('.products').hover(function() {
         $(this).css('box-shadow', '0px 0px 4px 4px rgba(0,0,0,.15)');
@@ -177,23 +244,124 @@ $(document).ready(function() {
 
     //list + grid buttons
 
-    $('.category-product-description').hide();
-    $('.category-product-buttons').hide();
 
     $('.list-button').click(function() {
-      $('.category-product-description').show();
-      $('.category-product-buttons').show();
-      $('.category-product').css("flex-direction", "row");
-      $('.category-product').css("width", "auto")
+      $('.category-product').css({"width": "100%", "justify-content": "space-between", "flex-direction": "row"});
+      $('.category-product-image-container').css("width", "25%");
+      $('.category-product-buttons > .product-button').css("width", "20vw");
+      $('.category-product-buttons').css({"display": "flex", "flex-direction": "column", "padding": "10px"});
+      $('.category-product-info').css({"width": "40%", "text-align": "left"})
+      $('.category-product-description').css("display", "block");
 
     })
 
     $('.grid-button').click(function() {
-      $('.category-product-description').hide();
-      $('.category-product-buttons').hide();
-      $('.category-product').css("flex-direction", "column")
-      $('.category-product').css("justify-content", "space-around")
-
+      $('.category-product').css({"width": "300px", "justify-content": "space-between", "flex-direction": "column"});
+      $('.category-product-image-container').css("width", "100%");
+      $('.category-product-buttons').css("display", "none");
+      $('.category-product-info').css({"width": "100%", "text-align": "center"});
+      $('.category-product-description').css("display", "none");
     })
+
+
+
+    //---Product Page---
+
+    $('.product-added').center();
+
+    //hides
+      $('.zoom-overlay').hide();
+
+    //quick view
+
+    $('.main-product-image-image').hover(function() {
+        $(this).find('.zoom-overlay').show();
+    }, function() {
+        $('.zoom-overlay').hide();
+    });
+
+    //sliders
+
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        arrows: true,
+        centerMode: true,
+        focusOnSelect: true
+    });
+
+    $('.tabs ul').each(function() {
+
+        var $active, $content, $links = $(this).find('a');
+
+        $active = $($links.filter('[href="' + location.hash + '"]')[0] || $links[0]);
+        $active.addClass('active');
+
+        $content = $($active[0].hash);
+
+        $links.not($active).each(function() {
+            $(this.hash).hide();
+        });
+
+
+        $(this).on('click', 'a', function(e) {
+            $active.removeClass('active');
+            $content.hide();
+
+            $active = $(this);
+            $content = $(this.hash);
+
+            $active.addClass('active');
+            $content.show();
+
+            e.preventDefault();
+        });
+    });
+
+    //quantity
+
+    $('.qtyplus').click(function(e){
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If is not undefined
+        if (!isNaN(currentVal)) {
+            // Increment
+            $('input[name='+fieldName+']').val(currentVal + 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+    // This button will decrement the value till 0
+    $(".qtyminus").click(function(e) {
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        fieldName = $(this).attr('field');
+        // Get its current value
+        var currentVal = parseInt($('input[name='+fieldName+']').val());
+        // If it isn't undefined or its greater than 0
+        if (!isNaN(currentVal) && currentVal > 0) {
+            // Decrement one
+            $('input[name='+fieldName+']').val(currentVal - 1);
+        } else {
+            // Otherwise put a 0 there
+            $('input[name='+fieldName+']').val(0);
+        }
+    });
+
+
 
 });

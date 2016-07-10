@@ -6,24 +6,29 @@ angular.module("shopper").controller("categoryController", function($scope, $sta
       productService.getCategoryProducts($stateParams.category).then(function(categoryProducts) {
         $scope.categoryProducts = categoryProducts.reverse();
         $scope.length = categoryProducts.length;
+        $scope.maxPrice = 0;
+        $scope.findMaxPrice = function() {
+            for (var i = 0; i < $scope.categoryProducts.length; i++) {
+                if ($scope.categoryProducts[i].price > $scope.maxPrice) {
+                    $scope.maxPrice = Math.ceil($scope.categoryProducts[i].price);
+                }
+            }
+        }
+        $scope.findMaxPrice();
       })
     }
 
     $scope.getCategoryProducts();
 
-//     $scope.maxPrice = 0;
-//     $scope.minPrice;
+    $scope.sortBy = "name";
+
+    $scope.minPrice = 0;
+
 //
 //
 //
 //
-    // $scope.findMaxPrice = function() {
-    //     for (var i = 0; i < $scope.categoryProducts.length; i++) {
-    //         if ($scope.categoryProducts[i].price > $scope.maxPrice) {
-    //             $scope.maxPrice = Math.ceil($scope.categoryProducts[i].price);
-    //         }
-    //     }
-    // }
+
     //
     // $scope.findMinPrice = function() {
     //     $scope.minPrice = $scope.categoryProducts[0].price;
@@ -36,7 +41,7 @@ angular.module("shopper").controller("categoryController", function($scope, $sta
     // }
 
 
-// $scope.findMaxPrice();
+
 // $scope.findMinPrice();
 
 });

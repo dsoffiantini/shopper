@@ -1,0 +1,29 @@
+<div class="search-header">
+  <h4>Search results for "{{searchText}}"</h4>
+</div>
+
+<main class="main-category-container">
+  <div class="category-product-container">
+      <div class="category-product" dir-paginate="result in searchResults | filter: priceFilter | orderBy: sortBy | itemsPerPage: 4" >
+          <div class="category-product-image-container">
+              <div class="category-product-image" style="background: url('{{result.image}}') center no-repeat; background-size: cover;">
+              </div>
+          </div>
+          <div class="category-product-info">
+              <a ui-sref="product({productID: result._id})">
+                  <h2>{{result.name}}</h2>
+                  <h3>{{result.price | currency}}</h3>
+              </a>
+              <div class="category-product-description">
+                  {{result.description}}
+              </div>
+          </div>
+          <div class="category-product-buttons">
+              <button type="button" name="button" class=" product-button add-to-cart" ng-click="productAddedToggle = !productAddedToggle" ng-click="addToCart()"><img src="images\icons\shopping-cart.svg" alt="Add to Cart"/>Add To Cart</button>
+              <button type="button" name="button" class=" product-button" ng-click="addToWishlist()"><img src="images\icons\heart.svg" alt="Add to Wish List"/>Add To Wish List</button>
+              <button type="button" name="button" class=" product-button" ng-click = "addToCompare()"><img src="images\icons\copy.svg" alt="Compare"/>Add To Compare</button>
+          </div>
+
+      </div>
+  </div>
+</main>

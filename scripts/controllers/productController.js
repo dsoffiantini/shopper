@@ -1,18 +1,35 @@
-angular.module('shopper').controller('productController', function($scope, $state, $stateParams, ngDialog, productService, wishlistService) {
+angular.module('shopper').controller('productController', function($scope, $state, $stateParams, ngDialog, userService, cartService, productService, wishlistService) {
 
     $scope.url = $state.href($state.current.name);
 
-    productService.getProduct($stateParams.productID).then(function(product) {
-      $scope.product = product;
-      productService.getCategoryProducts(product.category).then(function(categoryProducts) {
-          $scope.relatedProducts = categoryProducts;
-        })
-      $scope.addToCart = function() {
-        cartService.addToCart($scope.product)
-      }
-    })
+    $scope.relatedProducts;
 
-    
+    $scope.getProduct = function() {
+      productService.getProduct($stateParams.productID).then(function(product) {
+        $scope.product = product;
+        $scope.thenGetCategoryProducts = function() {
+          productService.getCategoryProducts(product.category).then(function(categoryProducts) {
+            $scope.relatedProducts = categoryProducts;
+          })
+        }
+        $scope.thenGetCategoryProducts();
+        $scope.thenGetCart = function() {
+          userService.getCart().then(function(cart){
+            $scope.cart = cart._id;
+            console.log($scope.cart);
+          })
+        }
+        $scope.thenGetCart();
+        console.log($scope.product);
+        console.log($scope.quantity);
+        // $scope.addToCart = function() {
+        //   cartService.addToCart($scope.cart, $scope.product, $scope.quantity)
+        // }
+        // $scope.addToCart();
+      })
+    }
+    $scope.getProduct();
+
 
     $scope.tags = [];
 
@@ -24,13 +41,20 @@ angular.module('shopper').controller('productController', function($scope, $stat
         }
     }
 
-
-
     $scope.clickToOpen = function(product) {
         var newScope = $scope.$new();
         newScope.product = product;
         ngDialog.open({
             template: './views/quick-view.html',
+            scope: newScope
+        });
+    };
+
+    $scope.clickToOpenImage = function(product) {
+        var newScope = $scope.$new();
+        newScope.product = product;
+        ngDialog.open({
+            template: './views/product-zoom.html',
             scope: newScope
         });
     };

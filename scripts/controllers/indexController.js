@@ -1,6 +1,15 @@
-angular.module("shopper").controller("indexController", function($scope, newsletterService, productService, cartService) {
+angular.module("shopper").controller("indexController", function($scope, userService, newsletterService, productService, cartService) {
 
-  // $scope.categories = productService.getCategories();
+  $scope.getUser = function() {
+      userService.createCart().then(function(user) {
+        cartService.getCart(user._id).then(function(cart) {
+            $scope.cart = cart.items;
+        });
+      })
+  }
+
+  $scope.getUser();
+
 
   $scope.getCategories = function() {
     productService.getCategories().then(function(categories) {
@@ -9,17 +18,17 @@ angular.module("shopper").controller("indexController", function($scope, newslet
   }
   $scope.getCategories();
 
-  cartService.getCart().then(function(cart) {
-    if (cart.length === 0) {
-      $scope.cart = "Your cart is empty"
-    }
-    else {
-      $scope.cart = cart;
-    }
-  });
+
 
   $scope.submitEmail = function(email) {
     newsletterService.newsletterSignup(email);
+  }
+
+  $scope.search = function(searchText) {
+    productService.searchProducts(searchText).then(function(results) {
+      $scope.searchResults = results;
+      console.log(results);
+    })
   }
 
 

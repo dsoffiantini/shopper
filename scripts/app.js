@@ -52,5 +52,10 @@ angular.module("shopper", ['ui.router', 'angularUtils.directives.dirPagination',
                 templateUrl: './views/wishlist.html',
                 controller: 'wishlistController'
             })
+            .state('searchResults', {
+                url: '/search/:query',
+                templateUrl: './views/search-results.html',
+                controller: 'indexController'
+            })
 
     });

@@ -18,11 +18,14 @@ body {
     height: 100%;
 }
 .slide-content {
-    font-size: 180px;
+    font-size: 12vh;
     position: relative;
     line-height: 200px;
     z-index: 3000000;
+    top: 60%;
 }
+
+
 .slide1 {
     background: url('../images/pupper.jpg') center no-repeat;
     background-size: cover;
@@ -49,7 +52,7 @@ body {
     top: 0;
     width: 100%;
     background: black;
-    z-index: 1;
+    z-index: 100000000000000000000;
     align-items: center;
     padding: 0 2.5%;
     list-style: none;
@@ -90,6 +93,8 @@ body {
 
 .searchbox {
   width: 30vw;
+  display: flex;
+  align-items: center;
 }
 
 .searchbox input {
@@ -98,6 +103,7 @@ body {
   border: none;
   padding: 8px 30px;
   text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,.5);
 }
 
 .searchbox img {
@@ -231,7 +237,7 @@ body {
 }
 .product-title {
     font-weight: bold;
-    height: 32px;
+    height: 2rem;
 }
 .product-price {
     color: #e03470;
@@ -241,28 +247,24 @@ body {
 // ---Homepage Brands---
 .brands {
     width: 90%;
-    margin: 20px auto;
+    margin: 20px auto 0px auto;
     background: white;
     display: flex;
     justify-content: space-around;
     padding: 20px 0px;
 }
 .brand {
-    // text-align: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: white;
 }
 
-.brand a {
-}
 .brand a img {
   display: flex;
-
-    width: 15vw;
-    height: 100%;
-    margin: 0 10px;
+  width: 15vw;
+  height: 100%;
+  margin: 0 10px;
 }
 // ---Return to Top---
 a.back-to-top {
@@ -283,7 +285,7 @@ a.back-to-top {
 .newsletter {
   background: white;
   width: 90%;
-  margin: 0px auto;
+  margin: 20px auto;
   display: flex;
   justify-content: center;
   padding: 20px 0px;
@@ -298,6 +300,7 @@ a.back-to-top {
 .newsletter-content h3 {
   font-size: 20px;
   font-weight: bold;
+  text-align: center;
 }
 
 .submit-email {
@@ -306,14 +309,14 @@ a.back-to-top {
 
 // ---Footer---
 .footer {
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 18px;
-    padding: 30px 0;
+    padding: 30px 0px;
     background: white;
-    margin-top: 20px;
+    margin: 20px auto 0px auto;
 }
 .footer ul li {
     margin: 3px 0;
@@ -384,10 +387,10 @@ a.back-to-top {
     right: 10px;
     height: 50px;
     width: 50px;
+    border-radius: 50%;
 }
 .close-modal:hover {
     border: 1px solid black;
-    border-radius: 50%;
 }
 .quick-view-images {
     max-width: 50%;

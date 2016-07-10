@@ -5,47 +5,23 @@
         </div>
     </div>
 
-    <div class="slide slide2"></div>
+    <div class="slide slide2">
+      <div class="slide-content">
+          <h2>Mean Stack Ecommerce</h2>
+      </div>
+    </div>
 </section>
 
-
 <main>
-  <section class="featured-products">
-      <h2>Featured Products</h2>
-    <content class="products-container">
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <content class="products-container">
 
             <div class="products" ng-repeat="product in products">
 
                 <div class="product-thumb">
 
-                  <div class="product-thumb-img" style="background: url('{{product.image}}') center no-repeat; background-size: contain;"></div>
-
-
-
-                    <div class="product-overlay">
-                      <button class="quick-view" ng-click="clickToOpen(product)">Quick View</button>
-                    </div>
-
-                </div>
-                <a ui-sref="product)({productID: product._id})">
-                <div class="product-title">{{product.name}}</div>
-                <div class="product-price">{{product.price | currency}}</div>
-        </a>
-
-        </div>
-    </content>
-  </section>
-  <section class="featured-products">
-      <h2>Featured Products</h2>
-    <content class="products-container-2">
-
-            <div class="products" ng-repeat="product in products">
-
-                <div class="product-thumb">
-
-                  <div class="product-thumb-img" style="background: url('{{product.image}}') center no-repeat; background-size: contain;"></div>
-
-
+                    <div class="product-thumb-img" style="background: url('{{product.image}}') center no-repeat; background-size: contain;"></div>
 
                     <div class="product-overlay">
                         <button class="quick-view" ng-click="clickToOpen(product)">Quick View</button>
@@ -53,44 +29,65 @@
 
                 </div>
                 <a ui-sref="product({productID: product._id})">
-                <div class="product-title">{{product.name}}</div>
-                <div class="product-price">{{product.price | currency}}</div>
-        </a>
+                    <div class="product-title">{{product.name}}</div>
+                    <div class="product-price">{{product.price | currency}}</div>
+                </a>
 
-        </div>
-    </content>
-  </section>
-  <section class="featured-products">
-      <h2>Featured Products</h2>
-    <content class="products-container-3">
+            </div>
+        </content>
+    </section>
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <content class="products-container-2">
 
             <div class="products" ng-repeat="product in products">
 
                 <div class="product-thumb">
 
-                  <div class="product-thumb-img" style="background: url('{{product.image}}') center no-repeat; background-size: contain;"></div>
-
-
+                    <div class="product-thumb-img" style="background: url('{{product.image}}') center no-repeat; background-size: contain;"></div>
 
                     <div class="product-overlay">
-                      <button class="quick-view" ng-click="clickToOpen(product)">Quick View</button>
+                        <button class="quick-view" ng-click="clickToOpen(product)">Quick View</button>
                     </div>
 
                 </div>
                 <a ui-sref="product({productID: product._id})">
-                <div class="product-title">{{product.name}}</div>
-                <div class="product-price">{{product.price | currency}}</div>
-        </a>
+                    <div class="product-title">{{product.name}}</div>
+                    <div class="product-price">{{product.price | currency}}</div>
+                </a>
 
-        </div>
-    </content>
-  </section>
+            </div>
+        </content>
+    </section>
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <content class="products-container-3">
+
+            <div class="products" ng-repeat="product in products">
+
+                <div class="product-thumb">
+
+                    <div class="product-thumb-img" style="background: url('{{product.image}}') center no-repeat; background-size: contain;"></div>
+
+                    <div class="product-overlay">
+                        <button class="quick-view" ng-click="clickToOpen(product)">Quick View</button>
+                    </div>
+
+                </div>
+                <a ui-sref="product({productID: product._id})">
+                    <div class="product-title">{{product.name}}</div>
+                    <div class="product-price">{{product.price | currency}}</div>
+                </a>
+
+            </div>
+        </content>
+    </section>
     <content class="brands">
         <div class="brand" ng-repeat="brand in brands">
-            <a ui-sref="brand({brand: brand.name})"><img ng-src="{{brand.image}}" alt="{{brand.name}}" /></a>
+            <a ui-sref="brand({brand: brand.name})"><img ng-src="{{brand.image}}" alt="{{brand.name}}"/></a>
         </div>
     </content>
-  
+
 </main>
 <script src="./scripts/jquery-3.0.0.js" charset="utf-8"></script>
 <script src="./slick/slick.js" charset="utf-8"></script>
