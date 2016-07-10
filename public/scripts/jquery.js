@@ -119,7 +119,6 @@ $(document).ready(function() {
         }]
     });
 
-
     // $(".brands").slick({
     //   slidesToShow: 3,
     //         slidesToScroll: 3,

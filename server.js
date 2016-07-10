@@ -36,7 +36,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(bodyParser.json());
-// app.use(express.static('public'));
+app.use(express.static('public'));
 app.use(cors());
 
 

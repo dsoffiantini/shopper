@@ -11,7 +11,7 @@
 <body class="product-page-body">
   <main class="product-page">
       <div class="image-wrapper">
-          <div class="slider slider-for" >
+          <div class="slider slider-for">
               <div class="main-product-image-image" ng-repeat="image in product.images" style="background: url('{{image}}') top no-repeat; background-size: cover;">
                 <div class="zoom-overlay" ng-click="clickToOpenImage(product)">
                   <img src="./images/icons/magnifying-glass.svg" alt="" />
@@ -50,7 +50,6 @@
     <section class="featured-products">
         <h2>Featured Products</h2>
         <content class="related-products-container">
-
             <div class="products" ng-repeat="product in relatedProducts">
 
                 <div class="product-thumb">
@@ -146,7 +145,7 @@
   </main>
 </body>
 
-<script src="./scripts/jquery-3.0.0.js" charset="utf-8"></script>
-<script src="./slick/slick.js" charset="utf-8"></script>
-<script src="./scripts/jquery.js" charset="utf-8"></script>
-<script src="./scripts/product-jQuery.js" charset="utf-8"></script>
+<script src="../scripts/jquery-3.0.0.js" charset="utf-8"></script>
+<script src="../slick/slick.js" charset="utf-8"></script>
+<script src="../scripts/jquery.js" charset="utf-8"></script>
+<script src="../scripts/product-jQuery.js" charset="utf-8"></script>
