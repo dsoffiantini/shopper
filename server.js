@@ -197,7 +197,7 @@ app.post('/api/newsletter', function(req, res, next) {
 
 
 
-var port = 8080;
+var port = 80;
 app.listen(port, function() {
   console.log('listening to port',port);
 })

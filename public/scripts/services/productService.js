@@ -3,7 +3,7 @@ angular.module("shopper").service("productService", function($http, $q) {
   this.getProducts = function() {
     return $http({
       method: 'GET',
-      url: '//localhost:8080/api/products'
+      url: '/api/products'
     }).then(function(response) {
       return response.data;
     }, function(err) {
@@ -14,7 +14,7 @@ angular.module("shopper").service("productService", function($http, $q) {
   this.getProduct = function(id) {
     return $http({
       method: 'GET',
-      url: '//localhost:8080/api/products/' + id
+      url: '/api/products/' + id
     }).then(function(response) {
       return response.data;
     }, function(err) {
@@ -25,7 +25,7 @@ angular.module("shopper").service("productService", function($http, $q) {
   this.getCategories = function() {
     return $http({
       method: 'GET',
-      url: '//localhost:8080/api/categories'
+      url: '/api/categories'
     }).then(function(response) {
       return response.data;
     }, function(err) {
@@ -36,7 +36,7 @@ angular.module("shopper").service("productService", function($http, $q) {
   this.getCategoryProducts = function(category) {
     return $http({
       method: 'GET',
-      url: '//localhost:8080/api/categories/' + category
+      url: '/api/categories/' + category
     }).then(function(response) {
       return response.data;
     }, function(err) {
@@ -47,14 +47,14 @@ angular.module("shopper").service("productService", function($http, $q) {
   this.deleteProduct = function(productID) {
     return $http({
       method: 'DELETE',
-      url: '//localhost:8080/api/products/' + productID
+      url: '/api/products/' + productID
     })
   }
 
   this.searchProducts = function(query) {
     return $http({
       method: 'GET',
-      url: '//localhost:8080/api/products/search/' + query
+      url: '/api/products/search/' + query
     }).then(function(response) {
       return response.data
     }, function(err) {
