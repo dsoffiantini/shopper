@@ -7,21 +7,21 @@ angular.module('shopper').controller('productController', function($scope, $stat
     $scope.getProduct = function() {
       productService.getProduct($stateParams.productID).then(function(product) {
         $scope.product = product;
+
         $scope.thenGetCategoryProducts = function() {
           productService.getCategoryProducts(product.category).then(function(categoryProducts) {
             $scope.relatedProducts = categoryProducts;
           })
         }
         $scope.thenGetCategoryProducts();
-        console.log($scope.product);
-        console.log($scope.quantity);
-        // $scope.addToCart = function() {
-        //   cartService.addToCart($scope.cart, $scope.product, $scope.quantity)
-        // }
-        // $scope.addToCart();
       })
     }
     $scope.getProduct();
+
+    $scope.addToCart = function() {
+      console.log($scope.product)
+        // cartService.addToCart(product)
+    }
 
 
     $scope.tags = [];

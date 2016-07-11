@@ -52,7 +52,7 @@
                 <input type='text' name='quantity' value='0' class='qty' mg-model="quantity"/>
                 <input type='button' value='+' class='qtyplus' field='quantity' />
               </form>
-              <button type="button" name="button" class=" product-button add-to-cart" ng-click="productAddedToggle = !productAddedToggle" ng-click="addToCart()"><img src="images\icons\shopping-cart.svg" alt="Add to Cart"/>Add To Cart</button>
+              <button type="button" name="button" class=" product-button add-to-cart" ng-click="productAddedToggle = !productAddedToggle" ng-click="addToCart(product)"><img src="images\icons\shopping-cart.svg" alt="Add to Cart"/>Add To Cart</button>
               <button type="button" name="button" class=" product-button" ng-click="addToWishlist()"><img src="images\icons\heart.svg" alt="Add to Wish List"/>Add To Wish List</button>
               <button type="button" name="button" class=" product-button" ng-click = "addToCompare()"><img src="images\icons\copy.svg" alt="Compare"/>Add To Compare</button>
           </div>

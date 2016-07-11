@@ -3,7 +3,7 @@ angular.module("shopper").service("userService", function($http, $q) {
   this.getCart = function() {
     return $http({
       method: 'GET',
-      url: '/api/session',
+      url: '//localhost//api/session',
     }).then(function(response) {
       return response.data;
     }, function(err) {
@@ -14,7 +14,7 @@ angular.module("shopper").service("userService", function($http, $q) {
   this.createCart = function() {
     return $http({
       method: 'POST',
-      url: '/api/session',
+      url: '//localhost//api/session',
     }).then(function(response) {
       return response.data;
     }, function(err) {

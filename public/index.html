@@ -26,7 +26,6 @@
             <li ng-repeat="category in categories"><a ui-sref="category({category: category.name})">{{category.name}}</a>
                 <ul class="category-dropdown">
                     <li ng-repeat="subcategory in category.subcategories">{{subcategory}}</li>
-
                 </ul>
             </li>
         </ul>
@@ -38,6 +37,7 @@
               <li><a ui-sref="cart"><img src="images\icons\shopping-cart.svg" alt="Cart" /></a>
                   <ol class="cart-content">
                     <li ng-repeat="item in cart.items">{{item.name}}<button type="button" name="delete" ng-click="deleteProduct()">X</button></li>
+                    <li ng-if="!cart.items.length">Your Cart is Empty</li>
                   </ol>
               </li>
 
@@ -108,6 +108,15 @@
             <img src="images\brands\logo-maestro.svg" alt="" />
         </ul>
     </footer>
+    <!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+$.src="//v2.zopim.com/?43ZsJedMgOlZJ05aXJy4oSIQSWb09Shv";z.t=+new Date;$.
+type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+</script>
+<!--End of Zopim Live Chat Script-->
 
     <script src="https://code.jquery.com/jquery-3.1.0.js" charset="utf-8"></script>
     <script src="./slick/slick.js" charset="utf-8"></script>
@@ -115,6 +124,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js" charset="utf-8"></script>
     <script src="./scripts/app.js" charset="utf-8"></script>
     <script src="./scripts/directives/slickDirective.js" charset="utf-8"></script>
+    <script src="./scripts/jquery.js" charset="utf-8"></script>
     <script src="./scripts/controllers/indexController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/homeController.js" charset="utf-8"></script>
     <script src="./scripts/controllers/productController.js" charset="utf-8"></script>
@@ -132,7 +142,6 @@
     <script src="./scripts/services/wishlistService.js" charset="utf-8"></script>
     <script src="./node_modules/angular-utils-pagination/dirPagination.js" charset="utf-8"></script>
     <script src="./node_modules/ng-dialog/js/ngDialog.js" charset="utf-8"></script>
-    <script src="./scripts/jquery.js" charset="utf-8"></script>
 
 
 </body>

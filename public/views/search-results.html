@@ -4,6 +4,9 @@
 
 <main class="main-category-container">
   <div class="category-product-container">
+    <div ng-if="!searchResults.length" class="no-search-results">
+      <h3>:( No results</h3>
+    </div>
       <div class="category-product" dir-paginate="result in searchResults | filter: priceFilter | orderBy: sortBy | itemsPerPage: 4" >
           <div class="category-product-image-container">
               <div class="category-product-image" style="background: url('{{result.image}}') center no-repeat; background-size: cover;">

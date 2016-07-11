@@ -74,7 +74,9 @@ app.get('/api/cart/:id', function(req, res, next) {
 
 //post to cart
 app.post('/api/cart/:id', function(req, res, next) {
+  console.log(req.body);
   Cart.findById(req.params.id, function(err, cart) {
+    console.log(cart.items)
     cart.items.push(req.body);
     cart.save();
     res.status(200).send(cart);

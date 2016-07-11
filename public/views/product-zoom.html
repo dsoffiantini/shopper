@@ -1,9 +1,18 @@
 <div class="curtain">
     <div class="product-zoom">
         <button type="button" name="close-modal" class="close-modal" ng-click="closeThisDialog()">X</button>
-        <div class="product-zoom-image-container">
+        <div class="product-zoom-image-container" slick-slider="{
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: true,
+            arrows: false,
+            prevArrow: '.btn-prev',
+            nextArrow: '.btn-next',
+            autoplay: false,
+          }">
           <div ng-repeat="image in product.images" class="product-zoom-image" style="background: url('{{image}}') center center no-repeat; background-size: contain;"></div>
         </div>
         <h2>{{product.name}}</h2>
     </div>
+
 </div>
