@@ -1,4 +1,4 @@
-angular.module('shopper').controller('homeController', function($scope, ngDialog, brandService, productService, $timeout) {
+angular.module('shopper').controller('homeController', function($scope, ngDialog, brandService, productService) {
 
     $scope.test = "test";
 
@@ -8,10 +8,8 @@ angular.module('shopper').controller('homeController', function($scope, ngDialog
 
 
     $scope.getProducts = function() {
-      $scope.loading = true;
         productService.getProducts().then(function(products) {
             $scope.products = products;
-            $scope.$broadcast('dataloaded');
         });
     }
 

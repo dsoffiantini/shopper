@@ -34,73 +34,73 @@ $('.load-jQuery').click(function() {
       //     fade: true,
       //     asNavFor: '.slider-nav'
       // });
-      $('.slider-nav').slick({
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          asNavFor: '.slider-for',
-          arrows: true,
-          centerMode: true,
-          focusOnSelect: true
-      });
-        $('.product-zoom-image-container').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: false,
-            arrows: true,
-            prevArrow: '.btn-prev',
-            nextArrow: '.btn-next',
-            autoplay: true,
-            responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    dots: false,
-                    arrows: false,
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    dots: false,
-                    arrows: false,
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }]
-        });
-
-      $(".related-products-container").slick({
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          dots: false,
-          arrows: true,
-          prevArrow: '.btn-prev',
-          nextArrow: '.btn-next',
-          autoplay: true,
-          responsive: [{
-              breakpoint: 1024,
-              settings: {
-                  dots: false,
-                  arrows: false,
-                  infinite: true,
-                  slidesToShow: 3,
-                  slidesToScroll: 1
-              }
-          },
-          {
-              breakpoint: 768,
-              settings: {
-                  dots: false,
-                  arrows: false,
-                  infinite: true,
-                  slidesToShow: 1,
-                  slidesToScroll: 1
-              }
-          }]
-      });
+      // $('.slider-nav').slick({
+      //     slidesToShow: 3,
+      //     slidesToScroll: 1,
+      //     asNavFor: '.slider-for',
+      //     arrows: true,
+      //     centerMode: true,
+      //     focusOnSelect: true
+      // });
+      //   $('.product-zoom-image-container').slick({
+      //       slidesToShow: 1,
+      //       slidesToScroll: 1,
+      //       dots: false,
+      //       arrows: true,
+      //       prevArrow: '.btn-prev',
+      //       nextArrow: '.btn-next',
+      //       autoplay: true,
+      //       responsive: [{
+      //           breakpoint: 1024,
+      //           settings: {
+      //               dots: false,
+      //               arrows: false,
+      //               infinite: true,
+      //               slidesToShow: 1,
+      //               slidesToScroll: 1
+      //           }
+      //       },
+      //       {
+      //           breakpoint: 768,
+      //           settings: {
+      //               dots: false,
+      //               arrows: false,
+      //               infinite: true,
+      //               slidesToShow: 1,
+      //               slidesToScroll: 1
+      //           }
+      //       }]
+      //   });
+      //
+      // $(".related-products-container").slick({
+      //     slidesToShow: 3,
+      //     slidesToScroll: 3,
+      //     dots: false,
+      //     arrows: true,
+      //     prevArrow: '.btn-prev',
+      //     nextArrow: '.btn-next',
+      //     autoplay: true,
+      //     responsive: [{
+      //         breakpoint: 1024,
+      //         settings: {
+      //             dots: false,
+      //             arrows: false,
+      //             infinite: true,
+      //             slidesToShow: 3,
+      //             slidesToScroll: 1
+      //         }
+      //     },
+      //     {
+      //         breakpoint: 768,
+      //         settings: {
+      //             dots: false,
+      //             arrows: false,
+      //             infinite: true,
+      //             slidesToShow: 1,
+      //             slidesToScroll: 1
+      //         }
+      //     }]
+      // });
 
 
 
