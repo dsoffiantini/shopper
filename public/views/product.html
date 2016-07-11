@@ -62,7 +62,35 @@
   <main>
     <section class="featured-products">
         <h2>Featured Products</h2>
-        <content class="related-products-container">
+        <content class="related-products-container" slick-slider="{
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: false,
+            arrows: true,
+            prevArrow: '.btn-prev',
+            nextArrow: '.btn-next',
+            autoplay: true,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        }">
             <div class="products" ng-repeat="product in relatedProducts">
 
                 <div class="product-thumb">

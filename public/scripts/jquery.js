@@ -31,41 +31,35 @@ $(document).ready(function() {
         }]
     });
 
-    setTimeout(
-        function()
-        {
-          $(".products-container").slick({
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              dots: false,
-              arrows: true,
-              prevArrow: '.btn-prev',
-              nextArrow: '.btn-next',
-              autoplay: true,
-              responsive: [{
-                  breakpoint: 1024,
-                  settings: {
-                      dots: false,
-                      arrows: false,
-                      infinite: true,
-                      slidesToShow: 3,
-                      slidesToScroll: 1
-                  }
-              },
-              {
-                  breakpoint: 768,
-                  settings: {
-                      dots: false,
-                      arrows: false,
-                      infinite: true,
-                      slidesToShow: 1,
-                      slidesToScroll: 1
-                  }
-              }]
-          });
-        }, 1000);
-
-
+    // $(".products-container").slick({
+    //     slidesToShow: 3,
+    //     slidesToScroll: 3,
+    //     dots: false,
+    //     arrows: true,
+    //     prevArrow: '.btn-prev',
+    //     nextArrow: '.btn-next',
+    //     autoplay: true,
+    //     responsive: [{
+    //         breakpoint: 1024,
+    //         settings: {
+    //             dots: false,
+    //             arrows: false,
+    //             infinite: true,
+    //             slidesToShow: 3,
+    //             slidesToScroll: 1
+    //         }
+    //     },
+    //     {
+    //         breakpoint: 768,
+    //         settings: {
+    //             dots: false,
+    //             arrows: false,
+    //             infinite: true,
+    //             slidesToShow: 1,
+    //             slidesToScroll: 1
+    //         }
+    //     }]
+    // });
 
     // $(".products-container-2").slick({
     //     slidesToShow: 5,
