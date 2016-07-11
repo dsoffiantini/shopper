@@ -15,6 +15,12 @@ angular.module('shopper').controller('homeController', function($scope, ngDialog
 
     $scope.getProducts();
 
+    $scope.getMoreProducts = function() {
+      productService.getCategoryProducts("Clothing").then(function(products) {
+        $scope.moreProducts = products;
+      })
+    }
+
 
     $scope.clickToOpen = function(product) {
         var newScope = $scope.$new();
