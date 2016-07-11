@@ -11,7 +11,7 @@
 <main class="product-page-body">
   <main class="product-page">
       <div class="image-wrapper">
-          <div class="slider slider-for" slick-slider="{
+          <div ng-if="product.images.length" class="slider slider-for" slick-slider="{
               slidesToShow: 1,
               slidesToScroll: 1,
               arrows: false,
@@ -24,7 +24,7 @@
                 </div>
               </div>
             </div>
-          <div class="slider slider-nav" slick-slider="{
+          <div ng-if="product.images.length" class="slider slider-nav" slick-slider="{
               slidesToShow: 3,
               slidesToScroll: 1,
               asNavFor: '.slider-for',
@@ -62,7 +62,7 @@
   <main>
     <section class="featured-products">
         <h2>Featured Products</h2>
-        <content class="related-products-container" slick-slider="{
+        <content ng-if="relatedProducts.length" class="related-products-container" slick-slider="{
             slidesToShow: 3,
             slidesToScroll: 3,
             dots: false,

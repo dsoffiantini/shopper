@@ -13,13 +13,6 @@ angular.module('shopper').controller('productController', function($scope, $stat
           })
         }
         $scope.thenGetCategoryProducts();
-        $scope.thenGetCart = function() {
-          userService.getCart().then(function(cart){
-            $scope.cart = cart._id;
-            console.log($scope.cart);
-          })
-        }
-        $scope.thenGetCart();
         console.log($scope.product);
         console.log($scope.quantity);
         // $scope.addToCart = function() {
