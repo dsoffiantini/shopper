@@ -11,14 +11,27 @@
 <main class="product-page-body">
   <main class="product-page">
       <div class="image-wrapper">
-          <div class="slider slider-for">
+          <div class="slider slider-for" slick-slider="{
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: false,
+              fade: true,
+              asNavFor: '.slider-nav'
+          }">
               <div class="main-product-image-image" ng-repeat="image in product.images" style="background: url('{{image}}') top no-repeat; background-size: cover;">
                 <div class="zoom-overlay" ng-click="clickToOpenImage(product)">
                   <img src="./images/icons/magnifying-glass.svg" alt="" />
                 </div>
               </div>
             </div>
-          <div class="slider slider-nav">
+          <div class="slider slider-nav" slick-slider="{
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              asNavFor: '.slider-for',
+              arrows: true,
+              centerMode: true,
+              focusOnSelect: true
+          }">
               <div class="main-product-image-image-selector" ng-repeat="image in product.images" style="background: url('{{image}}') top no-repeat; background-size: cover;"></div>
           </div>
       </div>
@@ -49,7 +62,35 @@
   <main>
     <section class="featured-products">
         <h2>Featured Products</h2>
-        <content class="related-products-container">
+        <content class="related-products-container" slick-slider="{
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: false,
+            arrows: true,
+            prevArrow: '.btn-prev',
+            nextArrow: '.btn-next',
+            autoplay: true,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        }">
             <div class="products" ng-repeat="product in relatedProducts">
 
                 <div class="product-thumb">
