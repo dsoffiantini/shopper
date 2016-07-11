@@ -1,14 +1,14 @@
 angular.module("shopper").controller("indexController", function($scope, userService, newsletterService, productService, cartService) {
 
-  $scope.getUser = function() {
-      userService.createCart().then(function(user) {
-        cartService.getCart(user._id).then(function(cart) {
-            $scope.cart = cart.items;
-        });
-      })
-  }
-
-  $scope.getUser();
+  // $scope.getUser = function() {
+  //     userService.createCart().then(function(user) {
+  //       cartService.getCart(user._id).then(function(cart) {
+  //           $scope.cart = cart.items;
+  //       });
+  //     })
+  // }
+  //
+  // $scope.getUser();
 
 
   $scope.getCategories = function() {
