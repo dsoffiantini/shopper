@@ -24,12 +24,21 @@
 .cart-cart ul {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 90%;
   margin: 20px auto;
+}
+
+.cart-cart ul li {
+  flex: 1;
 }
 
 .cart-cart button {
   background: red;
   color: white;
   border: none;
+}
+
+.cart-product-image {
+  height: 200px;
+  width: 100%;
 }

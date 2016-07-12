@@ -6,6 +6,10 @@ var cartSchema = new Schema({
     product: {
       type: Object,
       ref: "Product"
+    },
+    quantity: {
+      type: Number,
+      min: 1
     }
   }]
 });

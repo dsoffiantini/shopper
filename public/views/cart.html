@@ -1,16 +1,17 @@
 <div class="cart-cart">
     <content>
-        <ul ng-repeat="item in cart" class="cart-items">
-            <li>{{item.image}}</li>
-            <li>{{item.name}}</li>
-            <li>{{item.price}}</li>
+        <ul ng-repeat="item in cart.items" class="cart-items">
+
+            <li class="cart-product-image" style="background: url('{{item.product.image}}') center no-repeat; background-size: contain;"></li>
+            <li>{{item.product.name}}</li>
+            <li>{{item.product.price}}</li>
             <li>{{item.quantity}}</li>
             <li>
                 <button type="button" name="delete" ng-click="deleteProduct()">X</button>
             </li>
         </ul>
     </content>
-    <content ng-if="!cart.length" class="empty-cart">
+    <content ng-if="!cart.items.length" class="empty-cart">
         <h3>Your Cart is Empty :(</h3>You have no items in your Shopping Cart. Bummer.<br>Click
         <a href="/#/">here</a>
         to continue shopping.

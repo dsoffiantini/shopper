@@ -18,9 +18,8 @@ angular.module('shopper').controller('productController', function($scope, $stat
     }
     $scope.getProduct();
 
-    $scope.addToCart = function() {
-      console.log($scope.product)
-        // cartService.addToCart(product)
+    $scope.addToCart = function(product) {
+        cartService.addToCart(product)
     }
 
 
