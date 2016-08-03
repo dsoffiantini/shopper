@@ -19,6 +19,7 @@ $(document).ready(function() {
         autoplay: true,
         dots: true,
         arrows: false,
+        autoplaySpeed: 1000000,
         responsive: [{
             breakpoint: 768,
             settings: {

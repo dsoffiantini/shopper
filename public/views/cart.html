@@ -1,19 +1,26 @@
 <div class="cart-cart">
-    <content>
+    <content class="cart-with-items">
         <ul ng-repeat="item in cart.items" class="cart-items">
 
             <li class="cart-product-image" style="background: url('{{item.product.image}}') center no-repeat; background-size: contain;"></li>
             <li>{{item.product.name}}</li>
             <li>{{item.product.price}}</li>
-            <li>{{item.quantity}}</li>
+            <!-- <li>{{item.quantity}}</li> -->
             <li>
-                <button type="button" name="delete" ng-click="deleteProduct()">X</button>
+                <button type="button" name="delete" ng-click="removeFromCart(item)">Remove</button>
             </li>
         </ul>
+        <div class="cart-total" ng-if="cart.items.length">
+          <h5>Total: {{total | currency}}</h5>
+        </div>
     </content>
     <content ng-if="!cart.items.length" class="empty-cart">
-        <h3>Your Cart is Empty :(</h3>You have no items in your Shopping Cart. Bummer.<br>Click
-        <a href="/#/">here</a>
-        to continue shopping.
+        <div>
+          <h3>Your Cart is Empty :(</h3>
+          You have no items in your Shopping Cart. Bummer.<br>
+          Click <a ui-sref="home">here</a> to continue shopping.
+        </div>
     </content>
+    <script src="./scripts/jquery-3.0.0.js" charset="utf-8"></script>
+    <script src="./scripts/jquery.js" charset="utf-8"></script>
 </div>

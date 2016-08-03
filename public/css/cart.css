@@ -33,7 +33,7 @@
 }
 
 .cart-cart button {
-  background: red;
+  background: black;
   color: white;
   border: none;
 }
@@ -41,4 +41,17 @@
 .cart-product-image {
   height: 200px;
   width: 100%;
+}
+
+.cart-total {
+  margin-bottom: 10px;
+}
+
+.cart-total h5 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.empty-cart {
+  padding: 100px 0px;
 }

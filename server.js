@@ -83,6 +83,30 @@ app.post('/api/cart/:id', function(req, res, next) {
   })
 })
 
+//delete from cart
+app.put('/api/cart/:id/:productid', function(req, res, next) {
+  console.log(req.body);
+  Cart.findByIdAndUpdate(req.params.id, { $pull: { 'items': {  _id: req.params.productid } } }, function(err, cart) {
+    console.log(req.params.productid)
+    if(err){
+       	console.log(err);
+      }
+    else {
+      res.status(200).send(cart);
+    }
+  })
+})
+
+// app.delete('/api/products/:id', function(req, res, next) {
+//   Product.findByIdAndRemove(req.params.id, function (err, products) {
+//     if(err) {
+//       console.log("ERROR")
+//     } else {
+//       res.status(200).json(products)
+//     }
+//   })
+// })
+
 //get products
 app.get('/api/products', function(req, res, next) {
   Product.find(function(err, products) {
