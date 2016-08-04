@@ -85,27 +85,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.products').hover(function() {
-        $(this).css('box-shadow', '0px 0px 4px 4px rgba(0,0,0,.15)');
-        $(this).find('.product-overlay').show();
-    }, function() {
-        $('.products').css('box-shadow', '0px 0px 6px 0px rgba(0,0,0,.15)');
-        $('.product-overlay').hide();
-    });
-
-    $('.quick-view').hover(function() {
-        $(this).css({
-            'background': 'rgba(255,255,255,.8)',
-            'color': 'black'
-        })
-    }, function() {
-        $(this).css({
-            'background': 'rgba(0,0,0,0)',
-            'color': 'white'
-        })
-    })
-
-    // ---Center Modal---
+        // ---Center Modal---
 
     $.fn.center = function() {
         this.css("position", "absolute");
