@@ -22,7 +22,15 @@ angular.module("shopper").directive('slickSlider',function($timeout){
                  'background': 'rgba(0,0,0,0)',
                  'color': 'white'
              })
-         })
+         });
+
+         $('.main-product-image-image').hover(function() {
+             $(this).find('.zoom-overlay').show();
+         }, function() {
+             $('.zoom-overlay').hide();
+         });
+
+
      });
    }
  }

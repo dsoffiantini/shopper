@@ -166,11 +166,7 @@ $(document).ready(function() {
 
     //quick view
 
-    $('.main-product-image-image').hover(function() {
-        $(this).find('.zoom-overlay').show();
-    }, function() {
-        $('.zoom-overlay').hide();
-    });
+  
 
     //sliders
 
