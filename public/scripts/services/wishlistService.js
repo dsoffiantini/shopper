@@ -4,7 +4,7 @@ angular.module("shopper").service("wishlistService", function($http, $q) {
 
     return $http({
       method: 'GET',
-      url: '//localhost:8080/api/wishlist'
+      url: '/api/wishlist'
     }).then(function(response) {
       return response.data;
     }, function(err) {
@@ -15,7 +15,7 @@ angular.module("shopper").service("wishlistService", function($http, $q) {
   this.addToWishlist = function(product) {
     return $http({
       method: 'POST',
-      url: '//localhost:8080/api/wishlist',
+      url: '/api/wishlist',
       body: product
     })
   }

@@ -7,7 +7,7 @@ angular.module("shopper").service("adminService", function($http, $q) {
   this.deleteProduct = function(id) {
     return $http({
       method: 'DELETE',
-      url: '//localhost/api/products/' + id
+      url: '/api/products/' + id
     })
   }
 
