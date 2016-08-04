@@ -5,7 +5,7 @@ angular.module('shopper').controller('homeController', function($scope, ngDialog
     // $scope.products = productService.getProducts();
 
 
-    $scope.slick1 = function() {
+    function slick() {
       $('.products-container').slick({
             slidesToShow: 3,
             slidesToScroll: 3,
@@ -43,7 +43,7 @@ angular.module('shopper').controller('homeController', function($scope, ngDialog
     $scope.getProducts = function() {
         productService.getProducts().then(function(products) {
             $scope.products = products;
-            $scope.slick1();
+            slick();
         });
     }
 
