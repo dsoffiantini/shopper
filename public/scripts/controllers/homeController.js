@@ -4,12 +4,46 @@ angular.module('shopper').controller('homeController', function($scope, ngDialog
 
     // $scope.products = productService.getProducts();
 
+
+    function slick1() {
+      $('products-container').slick({
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            dots: false,
+            arrows: true,
+            prevArrow: '.btn-prev',
+            nextArrow: '.btn-next',
+            autoplay: true,
+            responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    dots: false,
+                    arrows: false,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        })
+    }
+
     $scope.brands = brandService.getBrands();
 
 
     $scope.getProducts = function() {
         productService.getProducts().then(function(products) {
             $scope.products = products;
+            slick1();
         });
     }
 
